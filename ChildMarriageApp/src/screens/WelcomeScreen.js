@@ -1,18 +1,21 @@
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { Button, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import EmergencyCall from "../components/emergencyCall";
 
-export default function WelcomeScreen() {
+const WelcomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
         <EmergencyCall />
         <Text>WelcomeScreen</Text>
+        <Button title="Start" onPress={() => navigation.navigate("Home")} />
       </View>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: { backgroundColor: "green" },
 });
+
+export default WelcomeScreen;
