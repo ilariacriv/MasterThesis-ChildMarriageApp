@@ -2,7 +2,7 @@
  
 Project for master thesis
 
-Figma prototype: https://www.figma.com/file/A3bo9Drn8xhg9ZCN317m7k/Child-marriage-app-French?node-id=0%3A1
+Figma prototype: [link](https://www.figma.com/proto/A3bo9Drn8xhg9ZCN317m7k/Child-marriage-app-French?node-id=97%3A157&scaling=scale-down&page-id=0%3A1&starting-point-node-id=97%3A157)
 
 ## Contributing
 
