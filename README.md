@@ -15,6 +15,3 @@ Example: fix-#665: `Fix login issue`
 Chore: chore-#999: `Message in imperative`
 Example: chore-#665: `Update React navigation from 8 to 9`
 
-### Merge Strategy
-
-Rebase with squash. One PR per task.
