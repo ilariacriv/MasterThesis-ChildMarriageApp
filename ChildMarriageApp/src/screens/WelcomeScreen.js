@@ -7,7 +7,7 @@ const WelcomeScreen = ({ navigation }) => {
     <SafeAreaView>
       <View style={styles.container}>
         <EmergencyCall />
-        <Text>WelcomeScreen</Text>
+        <Text>Welcome!</Text>
         <Button title="Start" onPress={() => navigation.navigate("Home")} />
       </View>
     </SafeAreaView>
