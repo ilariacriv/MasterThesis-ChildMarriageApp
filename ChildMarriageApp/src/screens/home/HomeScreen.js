@@ -1,12 +1,12 @@
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import EmergencyCall from "../components/emergencyCall";
+import EmergencyCall from "../../components/emergencyCall";
 import { Heading, HStack, VStack, Button, Icon, Pressable } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
-import HelpBar from "../components/helpBar";
+import HelpBar from "../../components/helpBar";
 
 const HomeScreen = ({ navigation }) => {
   const ContentButton = (buttonText, navigationDest, iconName, iconlib) => {

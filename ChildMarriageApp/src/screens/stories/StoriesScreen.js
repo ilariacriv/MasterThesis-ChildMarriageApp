@@ -1,6 +1,6 @@
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import EmergencyCall from "../components/emergencyCall";
+import EmergencyCall from "../../components/emergencyCall";
 
 const StoriesScreen = ({ navigation }) => {
   return (

@@ -1,6 +1,6 @@
 import { SafeAreaView, StyleSheet } from "react-native";
 import React from "react";
-import EmergencyCall from "../components/emergencyCall";
+import EmergencyCall from "../../components/emergencyCall";
 import { VStack, Heading, Button, Box, Text } from "native-base";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -51,9 +51,5 @@ const WelcomeScreen = ({ navigation }) => {
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: { backgroundColor: "green" },
-});
 
 export default WelcomeScreen;
