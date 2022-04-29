@@ -1,12 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
-import WelcomeScreen from "./src/screens/WelcomeScreen";
-import HomeScreen from "./src/screens/HomeScreen";
-import LearnScreen from "./src/screens/LearnScreen";
+import WelcomeScreen from "./src/screens/welcome/WelcomeScreen";
+import HomeScreen from "./src/screens/home/HomeScreen";
+import LearnScreen from "./src/screens/learn/LearnScreen";
 import PlayScreen from "./src/screens/PlayScreen";
-import ContactScreen from "./src/screens/ContactScreen";
-import StoriesScreen from "./src/screens/StoriesScreen";
-import SettingsScreen from "./src/screens/SettingsScreen";
+import ContactScreen from "./src/screens/contact/ContactScreen";
+import StoriesScreen from "./src/screens/stories/StoriesScreen";
+import SettingsScreen from "./src/screens/home/SettingsScreen";
 import { theme } from "./src/style/theme";
 
 import { NavigationContainer } from "@react-navigation/native";
