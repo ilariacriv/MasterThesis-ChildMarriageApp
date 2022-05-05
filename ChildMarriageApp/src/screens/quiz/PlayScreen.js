@@ -1,15 +1,6 @@
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import React from "react";
-import {
-  Heading,
-  HStack,
-  VStack,
-  Button,
-  Box,
-  Image,
-  Text,
-  Pressable,
-} from "native-base";
+import { Heading, HStack, VStack, Button, Text, Pressable } from "native-base";
 import HelpBar from "../../components/helpBar";
 import { AntDesign } from "@expo/vector-icons";
 
