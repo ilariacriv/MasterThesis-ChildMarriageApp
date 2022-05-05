@@ -7,6 +7,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import HelpBar from "../../components/helpBar";
+import I18n from "../../i18n";
 
 const HomeScreen = ({ navigation }) => {
   const ContentButton = (buttonText, navigationDest, iconName, iconlib) => {
@@ -42,9 +43,6 @@ const HomeScreen = ({ navigation }) => {
         >
           <EmergencyCall />
           <HelpBar />
-          <Heading size="2xl" alignSelf="center">
-            Home Screen
-          </Heading>
           <HStack space={3} style={styles.hstack}>
             {ContentButton("Learn", "Learn", "book", FontAwesome5)}
             {ContentButton(

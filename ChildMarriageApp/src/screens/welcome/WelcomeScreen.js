@@ -3,8 +3,11 @@ import React from "react";
 import EmergencyCall from "../../components/emergencyCall";
 import { VStack, Heading, Button, Box, Text } from "native-base";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import * as Localization from "expo-localization";
+import I18n from "../../i18n";
 
 const WelcomeScreen = ({ navigation }) => {
+  //const i18n = useNavigationState((state) => state.i18n);
   return (
     <SafeAreaView>
       <VStack
@@ -17,7 +20,7 @@ const WelcomeScreen = ({ navigation }) => {
       >
         <EmergencyCall />
         <Heading size="2xl" alignSelf="center">
-          Welcome!
+          {I18n.t("welcomepage.welcome")}!
         </Heading>
         <Box
           margin="15px"
@@ -45,7 +48,7 @@ const WelcomeScreen = ({ navigation }) => {
           width="4/5"
           text
         >
-          Start
+          {I18n.t("welcomepage.start")}
         </Button>
       </VStack>
     </SafeAreaView>
