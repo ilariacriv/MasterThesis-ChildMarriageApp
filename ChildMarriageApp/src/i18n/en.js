@@ -4,6 +4,7 @@ export default {
     emergencycall: "Emergency\nCall",
     settings: "Settings",
     back: "Back",
+    save: "Save",
   },
   welcomepage: {
     welcome: "Welcome",
@@ -24,5 +25,13 @@ export default {
     sexuality: "Sexuality",
     cm: "Child Marriage",
     questions: "Common questions",
+  },
+  settings: {
+    lang: "Language",
+    enum: "Emergency number",
+    placeholder: "Write the new number here",
+    curr: "Current number",
+    ecmess:
+      'This number will be called when you press the "emergency call" button.',
   },
 };

@@ -4,6 +4,7 @@ export default {
     emergencycall: "Appel\nd’urgence",
     settings: "Paramètres",
     back: "Retour",
+    save: "Sauver",
   },
   welcomepage: {
     welcome: "Bienvenue",
@@ -24,5 +25,13 @@ export default {
     sexuality: "Sexualité",
     cm: "Mariage précoce",
     questions: "Questions fréquentes",
+  },
+  settings: {
+    lang: "Langue",
+    enum: "Numéro d'urgence",
+    placeholder: "Write the new number here",
+    curr: "Current number",
+    ecmess:
+      'Ce numéro sera appelé lorsque vous appuyez sur le bouton "appel d\'urgence".',
   },
 };
