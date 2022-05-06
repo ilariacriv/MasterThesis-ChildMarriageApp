@@ -1,13 +1,25 @@
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
-import EmergencyCall from "../../components/emergencyCall";
-import { Heading, HStack, VStack, Button, Icon, Pressable } from "native-base";
-import { Ionicons } from "@expo/vector-icons";
-import { FontAwesome } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Octicons } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
+import {
+  Heading,
+  HStack,
+  VStack,
+  Button,
+  Icon,
+  Pressable,
+  ScrollView,
+} from "native-base";
+import {
+  Ionicons,
+  Foundation,
+  FontAwesome,
+  MaterialCommunityIcons,
+  Octicons,
+} from "@expo/vector-icons";
+
 import HelpBar from "../../components/helpBar";
+import I18n from "../../i18n";
 
 const LearnScreen = ({ navigation }) => {
   const ContentButton = (buttonText, navigationDest, iconName, iconlib) => {
@@ -26,64 +38,63 @@ const LearnScreen = ({ navigation }) => {
           size="75"
           color="rgba(20,206,218,1)"
           alignSelf="center"
+          style={{ textAlign: "center" }}
         />
-        <Text style={styles.Txt248}>{buttonText}</Text>
+        <Text style={styles.Txt248}>{I18n.t("learn." + buttonText)}</Text>
       </Pressable>
     );
   };
 
   return (
     <SafeAreaView>
-      <View>
-        <VStack
-          space={4}
-          marginTop="10"
-          width="100%"
-          height="100%"
-          bg="warning.50"
+      <VStack width="100%" height="100%" bg="warning.50">
+        <HelpBar />
+        <Heading size="2xl" alignSelf="center">
+          {I18n.t("home.learn")}
+        </Heading>
+        <ScrollView
+          _contentContainerStyle={{
+            justifyContent: "center",
+          }}
         >
-          <HelpBar />
-          <Heading size="2xl" alignSelf="center">
-            Learn
-          </Heading>
-          <HStack space={3} style={styles.hstack}>
-            {ContentButton("Education", "Learn", "school", Ionicons)}
-            {ContentButton("Laws", "Learn", "law", Octicons)}
-          </HStack>
-          <HStack space={3} style={styles.hstack}>
-            {ContentButton(
-              "HIV and Health",
-              "Learn",
-              "stethoscope",
-              FontAwesome
-            )}
-            {ContentButton(
-              "Common questions",
-              "Learn",
-              "question",
-              FontAwesome
-            )}
-          </HStack>
-
-          <HStack paddingTop="5" space={3} style={styles.hstack}>
-            <Button
-              onPress={() => navigation.navigate("Welcome")}
-              size="lg"
-              width="2/5"
-            >
-              Quit
-            </Button>
-            <Button
-              onPress={() => navigation.navigate("Home")}
-              size="lg"
-              width="2/5"
-              text
-            >
-              Back
-            </Button>
-          </HStack>
-        </VStack>
-      </View>
+          <VStack space={2} paddingY={3}>
+            <HStack space={3} style={styles.hstack}>
+              {ContentButton("edu", "Learn", "school", Ionicons)}
+              {ContentButton("laws", "Learn", "law", Octicons)}
+            </HStack>
+            <HStack space={3} style={styles.hstack}>
+              {ContentButton("srh", "Learn", "stethoscope", FontAwesome)}
+              {ContentButton("sexuality", "Learn", "female-symbol", Foundation)}
+            </HStack>
+            <HStack space={3} style={styles.hstack}>
+              {ContentButton(
+                "cm",
+                "Learn",
+                "human-male-girl",
+                MaterialCommunityIcons
+              )}
+              {ContentButton("questions", "Learn", "question", FontAwesome)}
+            </HStack>
+          </VStack>
+        </ScrollView>
+        <HStack paddingY="2" space={3} style={styles.hstack}>
+          <Button
+            onPress={() => navigation.navigate("Welcome")}
+            size="lg"
+            width="2/5"
+          >
+            {I18n.t("common.quit")}
+          </Button>
+          <Button
+            onPress={() => navigation.navigate("Home")}
+            size="lg"
+            width="2/5"
+            text
+          >
+            {I18n.t("common.back")}
+          </Button>
+        </HStack>
+      </VStack>
     </SafeAreaView>
   );
 };
@@ -102,8 +113,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingTop: 18,
     paddingBottom: 10,
-    paddingLeft: 13,
-    paddingRight: 12,
+    paddingLeft: 3,
+    paddingRight: 3,
     borderRadius: 40,
     backgroundColor: "white",
     /*  linear-gradient(0deg, rgba(246,246,246,1), rgba(246,246,246,1)), linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)) */
@@ -113,8 +124,8 @@ const styles = StyleSheet.create({
     shadowColor: "rgba(0,0,0,0.25)",
     elevation: 0,
     shadowOffset: { width: 0, height: 4 },
-    width: 149,
-    height: 200,
+    width: 159,
+    height: 180,
   },
   Txt248: {
     fontSize: 22,
@@ -123,8 +134,6 @@ const styles = StyleSheet.create({
     color: "rgba(20,206,218,1)",
     textAlign: "center",
     justifyContent: "center",
-    width: 120,
-    height: 60,
   },
 });
 

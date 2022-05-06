@@ -7,7 +7,7 @@ import { HStack } from "native-base";
 
 const HelpBar = () => {
   return (
-    <HStack justifyContent="space-between" paddingX="10px" paddingTop="10px">
+    <HStack justifyContent="space-between" paddingX="10px">
       <FontAwesome5
         name="assistive-listening-systems"
         size={50}

@@ -1,18 +1,17 @@
-import { SafeAreaView, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
 import EmergencyCall from "../../components/emergencyCall";
-import { VStack, Heading, Button, Box, Text } from "native-base";
+import { VStack, Heading, Button, Box, Text, ScrollView } from "native-base";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import * as Localization from "expo-localization";
 import I18n from "../../i18n";
+import scrollViewStyles from "../../style/globalStyle";
 
 const WelcomeScreen = ({ navigation }) => {
-  //const i18n = useNavigationState((state) => state.i18n);
   return (
     <SafeAreaView>
       <VStack
         space={4}
-        marginTop="10"
         width="100%"
         height="100%"
         bg="warning.50"
@@ -22,8 +21,8 @@ const WelcomeScreen = ({ navigation }) => {
         <Heading size="2xl" alignSelf="center">
           {I18n.t("welcomepage.welcome")}!
         </Heading>
+
         <Box
-          margin="15px"
           bg="white"
           borderColor="gray.300"
           borderWidth="1"

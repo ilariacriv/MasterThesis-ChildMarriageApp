@@ -1,4 +1,5 @@
-import { SafeAreaView, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
 import { Heading, HStack, VStack, Button, Text, Pressable } from "native-base";
 import HelpBar from "../../components/helpBar";
@@ -36,13 +37,7 @@ const PlayScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <View>
-        <VStack
-          space={2}
-          marginTop="10"
-          width="100%"
-          height="100%"
-          bg="warning.50"
-        >
+        <VStack space={2} width="100%" height="100%" bg="warning.50">
           <HelpBar />
           <Heading size="2xl" alignSelf="center">
             Play

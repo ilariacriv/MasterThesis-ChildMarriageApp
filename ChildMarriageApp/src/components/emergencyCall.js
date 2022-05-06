@@ -16,7 +16,7 @@ const EmergencyCall = () => {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: "red",
-    height: 100,
+    //  height: 100,
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-evenly",

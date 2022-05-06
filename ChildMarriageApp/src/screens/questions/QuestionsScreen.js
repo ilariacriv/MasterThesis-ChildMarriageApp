@@ -3,59 +3,27 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
 import { Heading, HStack, VStack, Button, Box, Image, Text } from "native-base";
 import HelpBar from "../../components/helpBar";
+import I18n from "../../i18n";
 
-const StoriesScreen = ({ navigation }) => {
-  const images = {
-    anne: require("../../../assets/blackgirl.jpeg"),
-  };
-  const StoryBox = (name, navigationDest, shorttext, img) => {
-    return (
-      <HStack
-        space={2}
-        margin="15px"
-        bg="white"
-        borderColor="gray.300"
-        borderWidth="1"
-        alignItems="center"
-        paddingX="5px"
-        paddingY="10px"
-        justifyContent="space-around"
-        alignSelf="center"
-        width="95%"
-      >
-        <Image size="lg" source={images[img]} alt={name} />
-        <VStack width="65%" space={1}>
-          <Heading>{name}</Heading>
-          <Text>{shorttext}</Text>
-          <Button size="sm" onPress={() => navigation.navigate(navigationDest)}>
-            Open
-          </Button>
-        </VStack>
-      </HStack>
-    );
-  };
-
+const ReportScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <View>
         <VStack space={4} width="100%" height="100%" bg="warning.50">
           <HelpBar />
           <Heading size="2xl" alignSelf="center">
-            Stories
+            Questions
           </Heading>
-          {StoryBox(
-            "Anne",
-            "Anne",
-            "Anne was 13 years old when she got married...",
-            "anne"
-          )}
+          <Box>
+            <Text>This functionality will be available soon</Text>
+          </Box>
           <HStack paddingTop="5" space={3} style={styles.hstack}>
             <Button
               onPress={() => navigation.navigate("Welcome")}
               size="lg"
               width="2/5"
             >
-              Quit
+              {I18n.t("common.quit")}
             </Button>
             <Button
               onPress={() => navigation.navigate("Home")}
@@ -63,7 +31,7 @@ const StoriesScreen = ({ navigation }) => {
               width="2/5"
               text
             >
-              Back
+              {I18n.t("common.back")}
             </Button>
           </HStack>
         </VStack>
@@ -80,4 +48,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default StoriesScreen;
+export default ReportScreen;
