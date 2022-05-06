@@ -1,6 +1,7 @@
 import { StyleSheet, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import React from "react";
+import React, { useContext } from "react";
+import AppContext from "../../components/AppContext";
 import EmergencyCall from "../../components/emergencyCall";
 import {
   HStack,
@@ -21,6 +22,8 @@ import HelpBar from "../../components/helpBar";
 import I18n from "../../i18n";
 
 const HomeScreen = ({ navigation }) => {
+  const myContext = useContext(AppContext);
+  I18n.locale = myContext.language;
   const ContentButton = (buttonText, navigationDest, iconName, iconlib) => {
     return (
       <Pressable

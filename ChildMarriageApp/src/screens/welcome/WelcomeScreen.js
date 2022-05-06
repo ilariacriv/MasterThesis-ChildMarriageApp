@@ -1,5 +1,6 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import React from "react";
+import React, { useContext } from "react";
+import AppContext from "../../components/AppContext";
 import EmergencyCall from "../../components/emergencyCall";
 import { VStack, Heading, Button, Box, Text, ScrollView } from "native-base";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -8,6 +9,8 @@ import I18n from "../../i18n";
 import scrollViewStyles from "../../style/globalStyle";
 
 const WelcomeScreen = ({ navigation }) => {
+  const myContext = useContext(AppContext);
+  I18n.locale = myContext.language;
   return (
     <SafeAreaView>
       <VStack

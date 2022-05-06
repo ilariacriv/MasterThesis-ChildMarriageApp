@@ -12,7 +12,7 @@ const ReportScreen = ({ navigation }) => {
         <VStack space={4} width="100%" height="100%" bg="warning.50">
           <HelpBar />
           <Heading size="2xl" alignSelf="center">
-            Report
+            Stories
           </Heading>
           <Box>
             <Text>This functionality will be available soon</Text>

@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import React from "react";
+import React, { useContext } from "react";
 import {
   Heading,
   HStack,
@@ -13,11 +13,19 @@ import {
 } from "native-base";
 import HelpBar from "../../components/helpBar";
 import I18n from "../../i18n";
+import AppContext from "../../components/AppContext";
 
 const SettingsScreen = ({ navigation }) => {
-  const [value, setValue] =
-    I18n.currentLocale() == "fr" ? React.useState("fr") : React.useState("en");
+  const myContext = useContext(AppContext);
+  I18n.locale = myContext.language;
+  const [localLang, setLocalLang] = React.useState(myContext.language);
+  const [localEN, setLocalEN] = React.useState(myContext.emergencyNumber);
 
+  const onSave = () => {
+    myContext.updateLanguage(localLang);
+    myContext.updateEmergencynumber(localEN);
+    navigation.navigate("Home");
+  };
   return (
     <SafeAreaView>
       <View>
@@ -33,9 +41,9 @@ const SettingsScreen = ({ navigation }) => {
             <Radio.Group
               name="languageGroup"
               accessibilityLabel="language"
-              value={value}
+              value={localLang}
               onChange={(nextValue) => {
-                setValue(nextValue);
+                setLocalLang(nextValue);
               }}
             >
               <Radio value="en" my={1}>
@@ -65,7 +73,7 @@ const SettingsScreen = ({ navigation }) => {
               paddingX={3}
               alignContent="center"
             >
-              {I18n.t("settings.curr")}: 5446254
+              {I18n.t("settings.curr")}: {myContext.emergencyNumber}
             </Text>
             <Input
               mx="3"
@@ -73,6 +81,7 @@ const SettingsScreen = ({ navigation }) => {
               w="70%"
               borderColor="black"
               size="lg"
+              onChangeText={(text) => setLocalEN(text)}
             />
           </Box>
           <HStack paddingTop="5" space={3} style={styles.hstack}>
@@ -83,12 +92,7 @@ const SettingsScreen = ({ navigation }) => {
             >
               {I18n.t("common.back")}
             </Button>
-            <Button
-              onPress={() => navigation.navigate("Home")}
-              size="lg"
-              width="2/5"
-              text
-            >
+            <Button onPress={onSave} size="lg" width="2/5" text>
               {I18n.t("common.save")}
             </Button>
           </HStack>

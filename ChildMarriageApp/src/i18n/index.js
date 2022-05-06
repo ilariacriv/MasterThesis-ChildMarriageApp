@@ -1,5 +1,7 @@
 import I18n from "i18n-js";
 import * as Localization from "expo-localization";
+import React, { useContext } from "react";
+import AppContext from "../components/AppContext";
 
 import en from "./en";
 import fr from "./fr";

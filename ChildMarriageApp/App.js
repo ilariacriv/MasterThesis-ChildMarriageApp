@@ -13,32 +13,51 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NativeBaseProvider } from "native-base";
 import ReportScreen from "./src/screens/report/ReportScreen";
 import QuestionsScreen from "./src/screens/questions/QuestionsScreen";
+import React, { useState } from "react";
+import AppContext from "./src/components/AppContext";
+import * as Localization from "expo-localization";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const [language, setLanguage] = useState(Localization.locale.split("-")[0]);
+  const [emergencyNumber, setemergencyNumber] = useState("0000");
+  const updateLanguage = (newlang) => {
+    setLanguage(newlang);
+  };
+  const updateEmergencynumber = (newNumb) => {
+    setemergencyNumber(newNumb);
+  };
+  const userSettings = {
+    language: language,
+    emergencyNumber: emergencyNumber,
+    updateLanguage,
+    updateEmergencynumber,
+  };
   return (
-    <NativeBaseProvider theme={theme}>
-      <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Welcome"
-          screenOptions={{
-            headerShown: false,
-            gestureEnabled: false,
-          }}
-        >
-          <Stack.Screen name="Welcome" component={WelcomeScreen} />
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Learn" component={LearnScreen} />
-          <Stack.Screen name="Play" component={PlayScreen} />
-          <Stack.Screen name="Contact" component={ContactScreen} />
-          <Stack.Screen name="Stories" component={StoriesScreen} />
-          <Stack.Screen name="Settings" component={SettingsScreen} />
-          <Stack.Screen name="Report" component={ReportScreen} />
-          <Stack.Screen name="Questions" component={QuestionsScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </NativeBaseProvider>
+    <AppContext.Provider value={userSettings}>
+      <NativeBaseProvider theme={theme}>
+        <NavigationContainer>
+          <Stack.Navigator
+            initialRouteName="Welcome"
+            screenOptions={{
+              headerShown: false,
+              gestureEnabled: false,
+            }}
+          >
+            <Stack.Screen name="Welcome" component={WelcomeScreen} />
+            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Learn" component={LearnScreen} />
+            <Stack.Screen name="Play" component={PlayScreen} />
+            <Stack.Screen name="Contact" component={ContactScreen} />
+            <Stack.Screen name="Stories" component={StoriesScreen} />
+            <Stack.Screen name="Settings" component={SettingsScreen} />
+            <Stack.Screen name="Report" component={ReportScreen} />
+            <Stack.Screen name="Questions" component={QuestionsScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </NativeBaseProvider>
+    </AppContext.Provider>
   );
 }
 
