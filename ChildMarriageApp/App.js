@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { StyleSheet } from "react-native";
 import WelcomeScreen from "./src/screens/welcome/WelcomeScreen";
 import HomeScreen from "./src/screens/home/HomeScreen";
 import LearnScreen from "./src/screens/learn/LearnScreen";
@@ -21,7 +21,7 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [language, setLanguage] = useState(Localization.locale.split("-")[0]);
-  const [emergencyNumber, setemergencyNumber] = useState("+243000000000");
+  const [emergencyNumber, setemergencyNumber] = useState("000000000");
   const updateLanguage = (newlang) => {
     setLanguage(newlang);
   };

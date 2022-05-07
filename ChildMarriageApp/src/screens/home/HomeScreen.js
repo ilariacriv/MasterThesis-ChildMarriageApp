@@ -97,7 +97,6 @@ const HomeScreen = ({ navigation }) => {
             onPress={() => navigation.navigate("Settings")}
             size="lg"
             width="2/5"
-            text
           >
             {I18n.t("common.settings")}
           </Button>

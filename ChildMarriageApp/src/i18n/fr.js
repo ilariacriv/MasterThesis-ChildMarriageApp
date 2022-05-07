@@ -36,4 +36,18 @@ export default {
     alertMessage: "Please insert a correct number",
     alertTitle: "Attention",
   },
+  tutorial: {
+    slide1_1:
+      "Cette application vous permet d’en apprendre davantage sur les problèmes liés au mariage des enfants",
+    slide1_2:
+      "Cliquez sur la flèche pour apprendre comment l’application fonctionne ou appuyez sur le bouton Démarrer",
+    slide2_1: "En haut de chaque page vous pouvez trouver ces deux boutons:",
+    slide2_2:
+      "Si vous êtes bloqués et avez besoin d’aide, vous pouvez cliquer sur ce bouton: ",
+    slide2_3:
+      "Si vous souhaitez que le texte soit lu à haute voix, vous pouvez cliquer sur ce bouton:",
+    slide3:
+      "Les éléments bleus, comme ceux présentés ci-dessous, sont des boutons, vous pouvez cliquer dessus pour changer de page.",
+    slide4: "Vous êtes prêt, appuyez sur le bouton ci-dessous pour commencer!",
+  },
 };

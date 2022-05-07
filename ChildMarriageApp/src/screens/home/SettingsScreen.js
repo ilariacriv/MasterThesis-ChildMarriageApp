@@ -27,7 +27,7 @@ const SettingsScreen = ({ navigation }) => {
       alert(I18n.t("settings.alertMessage"));
       return;
     }
-    myContext.updateEmergencynumber("+243" + localEN);
+    myContext.updateEmergencynumber(localEN);
     navigation.navigate("Home");
   };
   return (

@@ -17,7 +17,7 @@ const EmergencyCall = () => {
     //     return;
     //   }
     const args = {
-      number: myContext.emergencyNumber,
+      number: "+243" + myContext.emergencyNumber,
       prompt: true,
     };
     // Make a call
