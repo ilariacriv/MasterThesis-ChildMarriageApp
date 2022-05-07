@@ -33,5 +33,7 @@ export default {
     curr: "Current number",
     ecmess:
       'Ce numéro sera appelé lorsque vous appuyez sur le bouton "appel d\'urgence".',
+    alertMessage: "Please insert a correct number",
+    alertTitle: "Attention",
   },
 };

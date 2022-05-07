@@ -21,7 +21,7 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [language, setLanguage] = useState(Localization.locale.split("-")[0]);
-  const [emergencyNumber, setemergencyNumber] = useState("0000");
+  const [emergencyNumber, setemergencyNumber] = useState("+243000000000");
   const updateLanguage = (newlang) => {
     setLanguage(newlang);
   };

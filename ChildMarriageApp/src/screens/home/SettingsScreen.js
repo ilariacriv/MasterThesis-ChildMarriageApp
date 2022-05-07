@@ -23,7 +23,11 @@ const SettingsScreen = ({ navigation }) => {
 
   const onSave = () => {
     myContext.updateLanguage(localLang);
-    myContext.updateEmergencynumber(localEN);
+    if (localEN.length != 9) {
+      alert(I18n.t("settings.alertMessage"));
+      return;
+    }
+    myContext.updateEmergencynumber("+243" + localEN);
     navigation.navigate("Home");
   };
   return (
@@ -81,6 +85,7 @@ const SettingsScreen = ({ navigation }) => {
               w="70%"
               borderColor="black"
               size="lg"
+              keyboardType="numeric"
               onChangeText={(text) => setLocalEN(text)}
             />
           </Box>
