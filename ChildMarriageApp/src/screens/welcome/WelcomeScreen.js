@@ -93,14 +93,15 @@ const WelcomeScreen = ({ navigation }) => {
     if (num == 3) {
       return (
         <Box alignItems="center" justifyContent="space-between" height="full">
-          <VStack height="80%" justifyContent="center" space={4}>
+          <VStack height="80%" justifyContent="center">
             <Text bold fontSize="md" textAlign="center">
               {I18n.t("tutorial.slide3")}
             </Text>
             <Image
               source={require("../../../assets/tutorial3.png")}
-              height="50%"
               alt="tutorialImg"
+              resizeMode={"contain"}
+              height="50%"
             />
           </VStack>
           <HStack space={7}>
