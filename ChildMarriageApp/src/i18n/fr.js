@@ -50,4 +50,15 @@ export default {
       "Les éléments bleus, comme ceux présentés ci-dessous, sont des boutons, vous pouvez cliquer dessus pour changer de page.",
     slide4: "Vous êtes prêt, appuyez sur le bouton ci-dessous pour commencer!",
   },
+
+  help: {
+    close: "Fermer",
+    home: 'Si vous voulez appeler une ligne d\'urgence, cliquez sur le bouton rouge.\n\nVous avez 4 boutons sur cette page : si vous voulez apprendre quelque chose, cliquez sur "S’informer", si vous voulez lire ou écouter un témoignage, cliquez sur "Témoignages", si vous voulez savoir où aller pour obtenir de l\'aide, cliquez sur "Demander de l\'aide", si vous voulez tester ce que vous avez appris avec un quiz, cliquez sur "Jouer".\n\nSi vous voulez quitter, cliquez sur "Quitter".',
+    settings: "",
+    learn: "",
+    questions: "",
+    play: "",
+    report: "",
+    stories: "",
+  },
 };

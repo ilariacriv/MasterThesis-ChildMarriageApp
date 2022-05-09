@@ -48,7 +48,7 @@ const LearnScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <VStack width="100%" height="100%" bg="warning.50">
-        <HelpBar />
+        <HelpBar page="learn" />
         <Heading size="2xl" alignSelf="center">
           {I18n.t("home.learn")}
         </Heading>
