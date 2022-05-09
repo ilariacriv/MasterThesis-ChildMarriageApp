@@ -38,7 +38,7 @@ const PlayScreen = ({ navigation }) => {
     <SafeAreaView>
       <View>
         <VStack space={2} width="100%" height="100%" bg="warning.50">
-          <HelpBar />
+          <HelpBar page="play" />
           <Heading size="2xl" alignSelf="center">
             Play
           </Heading>

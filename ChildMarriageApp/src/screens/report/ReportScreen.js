@@ -10,9 +10,9 @@ const ReportScreen = ({ navigation }) => {
     <SafeAreaView>
       <View>
         <VStack space={4} width="100%" height="100%" bg="warning.50">
-          <HelpBar />
+          <HelpBar page="Report" />
           <Heading size="2xl" alignSelf="center">
-            Stories
+            Report a case
           </Heading>
           <Box>
             <Text>This functionality will be available soon</Text>

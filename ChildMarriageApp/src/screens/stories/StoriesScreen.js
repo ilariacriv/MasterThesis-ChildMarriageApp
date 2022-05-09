@@ -39,7 +39,7 @@ const StoriesScreen = ({ navigation }) => {
     <SafeAreaView>
       <View>
         <VStack space={4} width="100%" height="100%" bg="warning.50">
-          <HelpBar />
+          <HelpBar page="stories" />
           <Heading size="2xl" alignSelf="center">
             Stories
           </Heading>

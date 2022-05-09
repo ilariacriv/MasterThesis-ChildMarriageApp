@@ -48,4 +48,15 @@ export default {
       "The blue elements, like the ones showed below, are buttons, you can click them to change page",
     slide4: "You are ready, press the “Start” button below to start!",
   },
+
+  help: {
+    close: "Close",
+    home: "If you want to call an emergency line click on the red button.\n\nYou have 4 buttons on this page: if you want to learn something click on “Learn”, if you want to read o listen to a story click on “Stories”, if you want to know where to go to get help, click on “get help”, if you want to test what you have learnt with a quiz, click on “Play”. \n\n  If you want to go out, click on “Exit”",
+    settings: "",
+    learn: "",
+    questions: "",
+    play: "",
+    report: "",
+    stories: "",
+  },
 };

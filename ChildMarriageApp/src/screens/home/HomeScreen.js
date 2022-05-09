@@ -49,7 +49,7 @@ const HomeScreen = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <VStack space={2} width="100%" height="100%" bg="warning.50">
         <EmergencyCall />
-        <HelpBar />
+        <HelpBar page="home" />
         <ScrollView
           _contentContainerStyle={{
             justifyContent: "center",

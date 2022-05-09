@@ -34,7 +34,7 @@ const SettingsScreen = ({ navigation }) => {
     <SafeAreaView>
       <View>
         <VStack space={2} width="100%" height="100%" bg="warning.50">
-          <HelpBar />
+          <HelpBar page="settings" />
           <Heading size="2xl" alignSelf="center">
             {I18n.t("common.settings")}
           </Heading>
