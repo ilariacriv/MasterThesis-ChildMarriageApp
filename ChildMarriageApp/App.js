@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet } from "react-native";
 import WelcomeScreen from "./src/screens/welcome/WelcomeScreen";
 import HomeScreen from "./src/screens/home/HomeScreen";
@@ -16,17 +15,41 @@ import QuestionsScreen from "./src/screens/questions/QuestionsScreen";
 import React, { useState } from "react";
 import AppContext from "./src/components/AppContext";
 import * as Localization from "expo-localization";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const getStringData = async (key) => {
+    try {
+      return await AsyncStorage.getItem(key);
+    } catch (e) {
+      console.log("Reading error");
+    }
+  };
+  const storeStringData = async (key, value) => {
+    try {
+      await AsyncStorage.setItem(key, value);
+    } catch (e) {
+      console.log("Error in saving", e);
+    }
+  };
+
+  const loc = Localization.locale.split("-")[0];
+  const data = getStringData("language");
+  const dataEmNum = getStringData("emNum");
+  console.log(dataEmNum);
   const [language, setLanguage] = useState(Localization.locale.split("-")[0]);
   const [emergencyNumber, setemergencyNumber] = useState("000000000");
+  // dataEmNum == null ? useState("000000000") : useState(dataEmNum);
   const updateLanguage = (newlang) => {
     setLanguage(newlang);
+    storeStringData("language", newlang);
+    alert(getStringData("language"));
   };
   const updateEmergencynumber = (newNumb) => {
     setemergencyNumber(newNumb);
+    storeStringData("emNum", newNumb);
   };
   const userSettings = {
     language: language,
