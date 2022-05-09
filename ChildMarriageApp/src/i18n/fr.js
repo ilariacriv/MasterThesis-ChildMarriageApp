@@ -60,5 +60,6 @@ export default {
     play: "",
     report: "",
     stories: "",
+    gethelp: "",
   },
 };

@@ -41,7 +41,7 @@ const ContactScreen = ({ navigation }) => {
     <SafeAreaView>
       <View>
         <VStack space={2} width="100%" height="100%" bg="warning.50">
-          <HelpBar />
+          <HelpBar page="gethelp" />
           <Heading size="2xl" alignSelf="center">
             Get Help
           </Heading>
