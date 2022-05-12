@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 import WelcomeScreen from "./src/screens/welcome/WelcomeScreen";
 import HomeScreen from "./src/screens/home/HomeScreen";
 import LearnScreen from "./src/screens/learn/LearnScreen";
+import LearnContentScreen from "./src/screens/learn/LearnContentScreen";
 import PlayScreen from "./src/screens/quiz/PlayScreen";
 import ContactScreen from "./src/screens/contact/ContactScreen";
 import StoriesScreen from "./src/screens/stories/StoriesScreen";
@@ -54,6 +55,7 @@ export default function App() {
             <Stack.Screen name="Settings" component={SettingsScreen} />
             <Stack.Screen name="Report" component={ReportScreen} />
             <Stack.Screen name="Questions" component={QuestionsScreen} />
+            <Stack.Screen name="LearnContent" component={LearnContentScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </NativeBaseProvider>

@@ -5,6 +5,7 @@ export default {
     settings: "Settings",
     back: "Back",
     save: "Save",
+    home: "Home",
   },
   welcomepage: {
     welcome: "Welcome",
@@ -24,6 +25,7 @@ export default {
     srh: "Sexual and reproductive health",
     sexuality: "Sexuality",
     cm: "Child Marriage",
+    menstruations: "Menstruation",
     questions: "Common questions",
   },
   settings: {

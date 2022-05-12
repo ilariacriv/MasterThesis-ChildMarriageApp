@@ -5,6 +5,7 @@ export default {
     settings: "Paramètres",
     back: "Retour",
     save: "Sauver",
+    home: "Accueil",
   },
   welcomepage: {
     welcome: "Bienvenue",
@@ -23,7 +24,8 @@ export default {
     laws: "Lois",
     srh: "Santé sexuelle et reproductive",
     sexuality: "Sexualité",
-    cm: "Mariage précoce",
+    cm: "Mariage d’enfants",
+    menstruations: "Menstruation",
     questions: "Questions fréquentes",
   },
   settings: {

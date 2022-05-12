@@ -16,6 +16,7 @@ import {
   FontAwesome,
   MaterialCommunityIcons,
   Octicons,
+  Entypo,
 } from "@expo/vector-icons";
 
 import HelpBar from "../../components/helpBar";
@@ -23,9 +24,12 @@ import I18n from "../../i18n";
 
 const LearnScreen = ({ navigation }) => {
   const ContentButton = (buttonText, navigationDest, iconName, iconlib) => {
+    const navParams = {
+      title: navigationDest,
+    };
     return (
       <Pressable
-        onPress={() => navigation.navigate(navigationDest)}
+        onPress={() => navigation.navigate("LearnContent", navParams)}
         bg="coolGray.100"
         rounded="8"
         borderWidth="1"
@@ -61,21 +65,29 @@ const LearnScreen = ({ navigation }) => {
         >
           <VStack space={2} paddingY={3}>
             <HStack space={3} style={styles.hstack}>
-              {ContentButton("edu", "Learn", "school", Ionicons)}
-              {ContentButton("laws", "Learn", "law", Octicons)}
+              {ContentButton("edu", "edu", "school", Ionicons)}
+              {ContentButton("laws", "laws", "law", Octicons)}
             </HStack>
             <HStack space={3} style={styles.hstack}>
-              {ContentButton("srh", "Learn", "stethoscope", FontAwesome)}
-              {ContentButton("sexuality", "Learn", "female-symbol", Foundation)}
+              {ContentButton("srh", "srh", "stethoscope", FontAwesome)}
+              {ContentButton(
+                "sexuality",
+                "sexuality",
+                "female-symbol",
+                Foundation
+              )}
             </HStack>
             <HStack space={3} style={styles.hstack}>
               {ContentButton(
                 "cm",
-                "Learn",
+                "cm",
                 "human-male-girl",
                 MaterialCommunityIcons
               )}
-              {ContentButton("questions", "Learn", "question", FontAwesome)}
+              {ContentButton("menstruations", "menstruations", "drop", Entypo)}
+            </HStack>
+            <HStack space={3} style={styles.hstack}>
+              {ContentButton("questions", "commquest", "question", FontAwesome)}
             </HStack>
           </VStack>
         </ScrollView>
