@@ -30,7 +30,7 @@ const SettingsScreen = ({ navigation }) => {
     if (localEN != myContext.emergencyNumber) {
       var pattern = /^\d{9}$/;
       if (!localEN.match(pattern)) {
-        alert(I18n.t("settings.alertMessage"));
+        alert(I18n.t("common/settings.alertMessage"));
         return;
       }
       myContext.updateEmergencynumber(localEN);
@@ -43,7 +43,7 @@ const SettingsScreen = ({ navigation }) => {
         <VStack space={2} width="100%" height="100%" bg="warning.50">
           <HelpBar page="settings" />
           <Heading size="2xl" alignSelf="center">
-            {I18n.t("common.settings")}
+            {I18n.t("common/common.settings")}
           </Heading>
           <ScrollView
             _contentContainerStyle={{
@@ -52,7 +52,7 @@ const SettingsScreen = ({ navigation }) => {
           >
             <Box paddingY={5} alignItems="center">
               <Text fontSize="xl" paddingBottom={3} bold>
-                {I18n.t("settings.lang")}:{" "}
+                {I18n.t("common/settings.lang")}:{" "}
               </Text>
               <Radio.Group
                 name="languageGroup"
@@ -79,7 +79,7 @@ const SettingsScreen = ({ navigation }) => {
             >
               <Box paddingBottom={3} alignItems="center">
                 <Text fontSize="xl" bold>
-                  {I18n.t("settings.enum")}:{" "}
+                  {I18n.t("common/settings.enum")}:{" "}
                 </Text>
                 <Text
                   fontSize="lg"
@@ -87,7 +87,7 @@ const SettingsScreen = ({ navigation }) => {
                   paddingX={3}
                   alignContent="center"
                 >
-                  {I18n.t("settings.ecmess")}
+                  {I18n.t("common/settings.ecmess")}
                 </Text>
                 <Text
                   fontSize="lg"
@@ -95,11 +95,11 @@ const SettingsScreen = ({ navigation }) => {
                   paddingX={3}
                   alignContent="center"
                 >
-                  {I18n.t("settings.curr")}: {myContext.emergencyNumber}
+                  {I18n.t("common/settings.curr")}: {myContext.emergencyNumber}
                 </Text>
                 <Input
                   mx="3"
-                  placeholder={I18n.t("settings.placeholder")}
+                  placeholder={I18n.t("common/settings.placeholder")}
                   w="70%"
                   borderColor="black"
                   size="lg"
@@ -120,10 +120,10 @@ const SettingsScreen = ({ navigation }) => {
               size="lg"
               width="2/5"
             >
-              {I18n.t("common.back")}
+              {I18n.t("common/common.back")}
             </Button>
             <Button onPress={onSave} size="lg" width="2/5" text>
-              {I18n.t("common.save")}
+              {I18n.t("common/common.save")}
             </Button>
           </HStack>
         </VStack>

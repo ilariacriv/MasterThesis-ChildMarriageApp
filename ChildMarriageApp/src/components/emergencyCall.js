@@ -7,7 +7,7 @@ import { Pressable } from "native-base";
 import AppContext from "./AppContext";
 
 const EmergencyCall = () => {
-  const text = I18n.t("common.emergencycall");
+  const text = I18n.t("common/common.emergencycall");
   const myContext = useContext(AppContext);
 
   const triggerCall = () => {

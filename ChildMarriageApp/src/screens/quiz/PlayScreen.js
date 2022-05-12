@@ -1,15 +1,24 @@
-import { StyleSheet, View } from "react-native";
+import { I18nManager, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
-import { Heading, HStack, VStack, Button, Text, Pressable } from "native-base";
+import {
+  Heading,
+  HStack,
+  VStack,
+  Button,
+  Text,
+  Pressable,
+  ScrollView,
+} from "native-base";
 import HelpBar from "../../components/helpBar";
 import { AntDesign } from "@expo/vector-icons";
+import I18n from "../../i18n";
 
 const PlayScreen = ({ navigation }) => {
   const images = {
     anne: require("../../../assets/blackgirl.jpeg"),
   };
-  const QuizBox = (name, navigationDest, shorttext) => {
+  const QuizBox = (name, navigationDest) => {
     return (
       <Pressable onPress={() => navigation.navigate(navigationDest)}>
         <HStack
@@ -26,8 +35,11 @@ const PlayScreen = ({ navigation }) => {
         >
           <AntDesign name="play" size={90} color="green" />
           <VStack width="65%" space={1}>
-            <Heading>{name}</Heading>
-            <Text>{shorttext}</Text>
+            <Heading>
+              {I18n.t("common/play.quiz") +
+                ": " +
+                I18n.t("common/learn." + name)}
+            </Heading>
           </VStack>
         </HStack>
       </Pressable>
@@ -40,18 +52,31 @@ const PlayScreen = ({ navigation }) => {
         <VStack space={2} width="100%" height="100%" bg="warning.50">
           <HelpBar page="play" />
           <Heading size="2xl" alignSelf="center">
-            Play
+            {I18n.t("common/home.play")}
           </Heading>
-          {QuizBox("Quiz: Education", "EducationQuiz", "Quiz about education")}
-          {QuizBox("Quiz: Laws", "EducationQuiz", "Quiz about laws")}
-          {QuizBox("Quiz: HIV", "EducationQuiz", "Quiz about HIV and health")}
-          <HStack paddingTop="5" space={3} style={styles.hstack}>
+          <ScrollView
+            _contentContainerStyle={{
+              justifyContent: "center",
+            }}
+          >
+            <VStack space={2}>
+              {QuizBox("edu", "Play")}
+              {QuizBox("laws", "Play")}
+              {QuizBox("srh", "Play")}
+            </VStack>
+          </ScrollView>
+          <HStack
+            paddingTop="2"
+            space={3}
+            style={styles.hstack}
+            paddingBottom="3"
+          >
             <Button
               onPress={() => navigation.navigate("Welcome")}
               size="lg"
               width="2/5"
             >
-              Quit
+              {I18n.t("common/common.quit")}
             </Button>
             <Button
               onPress={() => navigation.navigate("Home")}
@@ -59,7 +84,7 @@ const PlayScreen = ({ navigation }) => {
               width="2/5"
               text
             >
-              Back
+              {I18n.t("common/common.back")}
             </Button>
           </HStack>
         </VStack>
