@@ -35,11 +35,14 @@ const HelpBar = (props) => {
               }}
             >
               <Text style={styles.textSecondary}>
-                {I18n.t("help." + props.page)}
+                {I18n.t("common/help." + props.page)}
               </Text>
             </ScrollView>
 
-            <Button title={I18n.t("help.close")} onPress={toggleOverlay} />
+            <Button
+              title={I18n.t("common/help.close")}
+              onPress={toggleOverlay}
+            />
           </VStack>
         </Overlay>
       </Pressable>

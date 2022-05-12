@@ -40,7 +40,7 @@ const HomeScreen = ({ navigation }) => {
           color="rgba(20,206,218,1)"
           style={{ textAlign: "center" }}
         />
-        <Text style={styles.Txt248}>{I18n.t("home." + buttonText)}</Text>
+        <Text style={styles.Txt248}>{I18n.t("common/home." + buttonText)}</Text>
       </Pressable>
     );
   };
@@ -91,14 +91,14 @@ const HomeScreen = ({ navigation }) => {
             size="lg"
             width="2/5"
           >
-            {I18n.t("common.quit")}
+            {I18n.t("common/common.quit")}
           </Button>
           <Button
             onPress={() => navigation.navigate("Settings")}
             size="lg"
             width="2/5"
           >
-            {I18n.t("common.settings")}
+            {I18n.t("common/common.settings")}
           </Button>
         </HStack>
       </VStack>

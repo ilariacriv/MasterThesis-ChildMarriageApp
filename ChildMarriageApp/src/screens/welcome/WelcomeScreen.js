@@ -23,10 +23,10 @@ const WelcomeScreen = ({ navigation }) => {
         <Box alignItems="center" justifyContent="space-between" height="full">
           <VStack height="80%" justifyContent="center">
             <Text bold fontSize="md" paddingBottom="20px" textAlign="center">
-              {I18n.t("tutorial.slide1_1")}
+              {I18n.t("common/tutorial.slide1_1")}
             </Text>
             <Text bold fontSize="md" paddingBottom="20px" textAlign="center">
-              {I18n.t("tutorial.slide1_2")}
+              {I18n.t("common/tutorial.slide1_2")}
             </Text>
           </VStack>
           <MaterialCommunityIcons
@@ -50,7 +50,7 @@ const WelcomeScreen = ({ navigation }) => {
         >
           <VStack height="80%" justifyContent="center" space={5} width="full">
             <Text bold fontSize="md" textAlign="center">
-              {I18n.t("tutorial.slide2_1")}
+              {I18n.t("common/tutorial.slide2_1")}
             </Text>
             <HStack
               space={1}
@@ -58,13 +58,13 @@ const WelcomeScreen = ({ navigation }) => {
               alignContent="center"
             >
               <Text bold fontSize="sm" textAlign="center" width="80%">
-                {I18n.t("tutorial.slide2_2")}
+                {I18n.t("common/tutorial.slide2_2")}
               </Text>
               <Entypo name="help-with-circle" size={50} color="black" />
             </HStack>
             <HStack space={1} alignContent="center">
               <Text bold fontSize="sm" textAlign="center" width="80%">
-                {I18n.t("tutorial.slide2_3")}
+                {I18n.t("common/tutorial.slide2_3")}
               </Text>
               <FontAwesome5
                 name="assistive-listening-systems"
@@ -95,7 +95,7 @@ const WelcomeScreen = ({ navigation }) => {
         <Box alignItems="center" justifyContent="space-between" height="full">
           <VStack height="80%" justifyContent="center">
             <Text bold fontSize="md" textAlign="center">
-              {I18n.t("tutorial.slide3")}
+              {I18n.t("common/tutorial.slide3")}
             </Text>
             <Image
               source={require("../../../assets/tutorial3.png")}
@@ -126,7 +126,7 @@ const WelcomeScreen = ({ navigation }) => {
         <Box alignItems="center" justifyContent="space-between" height="full">
           <VStack height="80%" justifyContent="center" space={4}>
             <Text bold fontSize="md" paddingBottom="20px" textAlign="center">
-              {I18n.t("tutorial.slide4")}
+              {I18n.t("common/tutorial.slide4")}
             </Text>
           </VStack>
 
@@ -153,7 +153,7 @@ const WelcomeScreen = ({ navigation }) => {
       >
         <EmergencyCall />
         <Heading size="2xl" alignSelf="center" flex={0.7}>
-          {I18n.t("welcomepage.welcome")}!
+          {I18n.t("common/welcomepage.welcome")}!
         </Heading>
 
         <Box
@@ -175,7 +175,7 @@ const WelcomeScreen = ({ navigation }) => {
           flex={1}
           marginBottom="3"
         >
-          {I18n.t("welcomepage.start")}
+          {I18n.t("common/welcomepage.start")}
         </Button>
       </VStack>
     </SafeAreaView>

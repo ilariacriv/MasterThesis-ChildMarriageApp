@@ -40,7 +40,9 @@ const LearnScreen = ({ navigation }) => {
           alignSelf="center"
           style={{ textAlign: "center" }}
         />
-        <Text style={styles.Txt248}>{I18n.t("learn." + buttonText)}</Text>
+        <Text style={styles.Txt248}>
+          {I18n.t("common/learn." + buttonText)}
+        </Text>
       </Pressable>
     );
   };
@@ -50,7 +52,7 @@ const LearnScreen = ({ navigation }) => {
       <VStack width="100%" height="100%" bg="warning.50">
         <HelpBar page="learn" />
         <Heading size="2xl" alignSelf="center">
-          {I18n.t("home.learn")}
+          {I18n.t("common/home.learn")}
         </Heading>
         <ScrollView
           _contentContainerStyle={{
@@ -83,7 +85,7 @@ const LearnScreen = ({ navigation }) => {
             size="lg"
             width="2/5"
           >
-            {I18n.t("common.quit")}
+            {I18n.t("common/common.quit")}
           </Button>
           <Button
             onPress={() => navigation.navigate("Home")}
@@ -91,7 +93,7 @@ const LearnScreen = ({ navigation }) => {
             width="2/5"
             text
           >
-            {I18n.t("common.back")}
+            {I18n.t("common/common.back")}
           </Button>
         </HStack>
       </VStack>

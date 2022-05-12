@@ -1,8 +1,17 @@
 import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
-import { Heading, HStack, VStack, Button, Box, Image, Text } from "native-base";
+import {
+  Heading,
+  HStack,
+  VStack,
+  Button,
+  ScrollView,
+  Image,
+  Text,
+} from "native-base";
 import HelpBar from "../../components/helpBar";
+import I18n from "../../i18n";
 
 const StoriesScreen = ({ navigation }) => {
   const images = {
@@ -28,7 +37,7 @@ const StoriesScreen = ({ navigation }) => {
           <Heading>{name}</Heading>
           <Text>{shorttext}</Text>
           <Button size="sm" onPress={() => navigation.navigate(navigationDest)}>
-            Open
+            {I18n.t("common/stories.open")}
           </Button>
         </VStack>
       </HStack>
@@ -41,21 +50,34 @@ const StoriesScreen = ({ navigation }) => {
         <VStack space={4} width="100%" height="100%" bg="warning.50">
           <HelpBar page="stories" />
           <Heading size="2xl" alignSelf="center">
-            Stories
+            {I18n.t("common/home.stories")}
           </Heading>
-          {StoryBox(
-            "Anne",
-            "Anne",
-            "Anne was 13 years old when she got married...",
-            "anne"
-          )}
-          <HStack paddingTop="5" space={3} style={styles.hstack}>
+          <ScrollView
+            _contentContainerStyle={{
+              justifyContent: "center",
+            }}
+          >
+            <VStack space={2}>
+              {StoryBox(
+                "Anne",
+                "Anne",
+                "Anne was 13 years old when she got married...",
+                "anne"
+              )}
+            </VStack>
+          </ScrollView>
+          <HStack
+            paddingTop="2"
+            space={3}
+            style={styles.hstack}
+            paddingBottom="3"
+          >
             <Button
               onPress={() => navigation.navigate("Welcome")}
               size="lg"
               width="2/5"
             >
-              Quit
+              {I18n.t("common/common.quit")}
             </Button>
             <Button
               onPress={() => navigation.navigate("Home")}
@@ -63,7 +85,7 @@ const StoriesScreen = ({ navigation }) => {
               width="2/5"
               text
             >
-              Back
+              {I18n.t("common/common.back")}
             </Button>
           </HStack>
         </VStack>

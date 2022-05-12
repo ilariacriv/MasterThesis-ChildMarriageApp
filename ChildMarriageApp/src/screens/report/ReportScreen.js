@@ -1,7 +1,16 @@
 import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
-import { Heading, HStack, VStack, Button, Box, Image, Text } from "native-base";
+import {
+  Heading,
+  HStack,
+  VStack,
+  Button,
+  Box,
+  ScrollView,
+  Text,
+  Center,
+} from "native-base";
 import HelpBar from "../../components/helpBar";
 import I18n from "../../i18n";
 
@@ -10,20 +19,33 @@ const ReportScreen = ({ navigation }) => {
     <SafeAreaView>
       <View>
         <VStack space={4} width="100%" height="100%" bg="warning.50">
-          <HelpBar page="Report" />
+          <HelpBar page="report" />
           <Heading size="2xl" alignSelf="center">
-            Report a case
+            {I18n.t("common/home.report")}
           </Heading>
-          <Box>
-            <Text>This functionality will be available soon</Text>
-          </Box>
-          <HStack paddingTop="5" space={3} style={styles.hstack}>
+          <ScrollView
+            _contentContainerStyle={{
+              justifyContent: "center",
+            }}
+          >
+            <Box>
+              <Center>
+                <Text>{I18n.t("common/report.NA")}</Text>
+              </Center>
+            </Box>
+          </ScrollView>
+          <HStack
+            paddingTop="2"
+            space={3}
+            style={styles.hstack}
+            paddingBottom="3"
+          >
             <Button
               onPress={() => navigation.navigate("Welcome")}
               size="lg"
               width="2/5"
             >
-              {I18n.t("common.quit")}
+              {I18n.t("common/common.quit")}
             </Button>
             <Button
               onPress={() => navigation.navigate("Home")}
@@ -31,7 +53,7 @@ const ReportScreen = ({ navigation }) => {
               width="2/5"
               text
             >
-              {I18n.t("common.back")}
+              {I18n.t("common/common.back")}
             </Button>
           </HStack>
         </VStack>

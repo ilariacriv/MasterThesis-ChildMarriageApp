@@ -1,8 +1,17 @@
 import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
-import { Heading, HStack, VStack, Button, Box, Image, Text } from "native-base";
+import {
+  Heading,
+  HStack,
+  VStack,
+  Button,
+  ScrollView,
+  Image,
+  Text,
+} from "native-base";
 import HelpBar from "../../components/helpBar";
+import I18n from "../../i18n";
 
 const ContactScreen = ({ navigation }) => {
   const images = {
@@ -26,11 +35,11 @@ const ContactScreen = ({ navigation }) => {
         <VStack width="65%" space={1}>
           <Heading>{name}</Heading>
           <Text fontSize="md">
-            <Text bold>Phone: </Text>
+            <Text bold>{I18n.t("common/contacts.phone") + ":\n"} </Text>
             {phone}
           </Text>
           <Text fontSize="md">
-            <Text bold>Address:</Text> {address}
+            <Text bold>{I18n.t("common/contacts.address")}:</Text> {address}
           </Text>
         </VStack>
       </HStack>
@@ -40,36 +49,49 @@ const ContactScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <View>
-        <VStack space={2} width="100%" height="100%" bg="warning.50">
+        <VStack space={1} width="100%" height="100%" bg="warning.50">
           <HelpBar page="gethelp" />
           <Heading size="2xl" alignSelf="center">
-            Get Help
+            {I18n.t("common/contacts.gethelp")}
           </Heading>
-          {ContactBox(
-            "AidProfen",
-            "(+243) 811-441-591",
-            "N° 19 Av PELICAN, Q.des volcans, C/Goma",
-            "aidprofen"
-          )}
-          {ContactBox(
-            "AidProfen",
-            "(+243) 811-441-591",
-            "N° 19 Av PELICAN, Q.des volcans, C/Goma",
-            "aidprofen"
-          )}
-          {ContactBox(
-            "AidProfen",
-            "(+243) 811-441-591",
-            "N° 19 Av PELICAN, Q.des volcans, C/Goma",
-            "aidprofen"
-          )}
-          <HStack paddingTop="5" space={3} style={styles.hstack}>
+          <ScrollView
+            _contentContainerStyle={{
+              justifyContent: "center",
+            }}
+          >
+            <VStack space={2}>
+              {ContactBox(
+                "AidProfen",
+                "(+243) 811-441-591",
+                "N° 19 Av PELICAN, Q.des volcans, C/Goma",
+                "aidprofen"
+              )}
+              {ContactBox(
+                "AidProfen",
+                "(+243) 811-441-591",
+                "N° 19 Av PELICAN, Q.des volcans, C/Goma",
+                "aidprofen"
+              )}
+              {ContactBox(
+                "AidProfen",
+                "(+243) 811-441-591",
+                "N° 19 Av PELICAN, Q.des volcans, C/Goma",
+                "aidprofen"
+              )}
+            </VStack>
+          </ScrollView>
+          <HStack
+            paddingTop="2"
+            space={3}
+            style={styles.hstack}
+            paddingBottom="3"
+          >
             <Button
               onPress={() => navigation.navigate("Welcome")}
               size="lg"
               width="2/5"
             >
-              Quit
+              {I18n.t("common/common.quit")}
             </Button>
             <Button
               onPress={() => navigation.navigate("Home")}
@@ -77,7 +99,7 @@ const ContactScreen = ({ navigation }) => {
               width="2/5"
               text
             >
-              Back
+              {I18n.t("common/common.back")}
             </Button>
           </HStack>
         </VStack>

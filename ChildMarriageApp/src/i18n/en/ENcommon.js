@@ -49,6 +49,12 @@ export default {
     slide4: "You are ready, press the “Start” button below to start!",
   },
 
+  contacts: {
+    gethelp: "Get Help",
+    phone: "Phone",
+    address: "Address",
+  },
+
   help: {
     close: "Close",
     home: "If you want to call an emergency line click on the red button.\n\nYou have 4 buttons on this page: if you want to learn something click on “Learn”, if you want to read o listen to a story click on “Stories”, if you want to know where to go to get help, click on “get help”, if you want to test what you have learnt with a quiz, click on “Play”. \n\n  If you want to go out, click on “Exit”",
@@ -59,5 +65,21 @@ export default {
     report: "",
     stories: "",
     gethelp: "",
+  },
+
+  questions: {
+    NA: "This functionality will be available soon",
+  },
+
+  play: {
+    quiz: "Quiz",
+  },
+
+  report: {
+    NA: "This functionality will be available soon",
+  },
+
+  stories: {
+    open: "Open",
   },
 };
