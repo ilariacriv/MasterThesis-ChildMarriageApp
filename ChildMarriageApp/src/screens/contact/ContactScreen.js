@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
 import {
@@ -12,7 +12,6 @@ import {
 } from "native-base";
 import HelpBar from "../../components/helpBar";
 import I18n from "../../i18n";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Call from "../../components/call";
 

@@ -3,7 +3,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { HStack, Pressable, ScrollView, VStack } from "native-base";
 import { Overlay, Text, Button } from "@rneui/base";
-import { StyleSheet } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import I18n from "../i18n";
 
 const HelpBar = (props) => {
@@ -19,15 +19,19 @@ const HelpBar = (props) => {
         size={50}
         color="black"
       />
-      <Pressable onPress={toggleOverlay}>
-        <Entypo name="help-with-circle" size={50} color="black" />
+      <Pressable>
+        <TouchableOpacity onPress={toggleOverlay}>
+          <Entypo name="help-with-circle" size={50} color="black" />
+        </TouchableOpacity>
         <Overlay
           isVisible={visible}
           onBackdropPress={toggleOverlay}
           overlayStyle={styles.overlay}
         >
           <VStack space={5} height="full">
-            <Text style={styles.textPrimary}>Hello!</Text>
+            <Text style={styles.textPrimary}>
+              {I18n.t("common/common.hello")}!
+            </Text>
 
             <ScrollView
               _contentContainerStyle={{

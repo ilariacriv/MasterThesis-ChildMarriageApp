@@ -2,7 +2,7 @@ export default {
   title: "Mariage d’enfants",
   q1: {
     q: "Qu’est-ce que le mariage d’enfants?",
-    a: "Le mariage d’enfants est un mariage dans lequel au moins un des conjoints a moins de 18 ans.",
+    r: "Le mariage d’enfants est un mariage dans lequel au moins un des conjoints a moins de 18 ans.",
   },
   q2: {
     q: "Où le mariage d’enfants est-il pratiqué?",

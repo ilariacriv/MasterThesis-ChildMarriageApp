@@ -9,7 +9,7 @@ import {
   FontAwesome5,
 } from "@expo/vector-icons";
 import I18n from "../../i18n";
-import { StyleSheet } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 
 const WelcomeScreen = ({ navigation }) => {
   const myContext = useContext(AppContext);
@@ -29,13 +29,14 @@ const WelcomeScreen = ({ navigation }) => {
               {I18n.t("common/tutorial.slide1_2")}
             </Text>
           </VStack>
-          <MaterialCommunityIcons
-            name="arrow-right-bold-circle"
-            size={50}
-            color="black"
-            alignSelf="flex-end"
-            onPress={() => setNum(num + 1)}
-          />
+          <TouchableOpacity onPress={() => setNum(num + 1)}>
+            <MaterialCommunityIcons
+              name="arrow-right-bold-circle"
+              size={50}
+              color="black"
+              alignSelf="flex-end"
+            />
+          </TouchableOpacity>
         </Box>
       );
     }
@@ -74,18 +75,20 @@ const WelcomeScreen = ({ navigation }) => {
             </HStack>
           </VStack>
           <HStack space={7}>
-            <MaterialCommunityIcons
-              name="arrow-left-bold-circle"
-              size={50}
-              color="black"
-              onPress={() => setNum(num - 1)}
-            />
-            <MaterialCommunityIcons
-              name="arrow-right-bold-circle"
-              size={50}
-              color="black"
-              onPress={() => setNum(num + 1)}
-            />
+            <TouchableOpacity onPress={() => setNum(num - 1)}>
+              <MaterialCommunityIcons
+                name="arrow-left-bold-circle"
+                size={50}
+                color="black"
+              />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setNum(num + 1)}>
+              <MaterialCommunityIcons
+                name="arrow-right-bold-circle"
+                size={50}
+                color="black"
+              />
+            </TouchableOpacity>
           </HStack>
         </VStack>
       );
@@ -105,18 +108,20 @@ const WelcomeScreen = ({ navigation }) => {
             />
           </VStack>
           <HStack space={7}>
-            <MaterialCommunityIcons
-              name="arrow-left-bold-circle"
-              size={50}
-              color="black"
-              onPress={() => setNum(num - 1)}
-            />
-            <MaterialCommunityIcons
-              name="arrow-right-bold-circle"
-              size={50}
-              color="black"
-              onPress={() => setNum(num + 1)}
-            />
+            <TouchableOpacity onPress={() => setNum(num - 1)}>
+              <MaterialCommunityIcons
+                name="arrow-left-bold-circle"
+                size={50}
+                color="black"
+              />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setNum(num + 1)}>
+              <MaterialCommunityIcons
+                name="arrow-right-bold-circle"
+                size={50}
+                color="black"
+              />
+            </TouchableOpacity>
           </HStack>
         </Box>
       );
@@ -129,13 +134,13 @@ const WelcomeScreen = ({ navigation }) => {
               {I18n.t("common/tutorial.slide4")}
             </Text>
           </VStack>
-
-          <MaterialCommunityIcons
-            name="arrow-left-bold-circle"
-            size={50}
-            color="black"
-            onPress={() => setNum(num - 1)}
-          />
+          <TouchableOpacity onPress={() => setNum(num - 1)}>
+            <MaterialCommunityIcons
+              name="arrow-left-bold-circle"
+              size={50}
+              color="black"
+            />
+          </TouchableOpacity>
         </Box>
       );
     }

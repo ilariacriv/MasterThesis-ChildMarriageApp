@@ -1,4 +1,4 @@
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React, { useContext } from "react";
 import AppContext from "../../components/AppContext";
@@ -33,14 +33,19 @@ const HomeScreen = ({ navigation }) => {
         borderWidth="1"
         style={styles.Homebutton}
       >
-        <Icon
-          as={iconlib}
-          name={iconName}
-          size="75"
-          color="rgba(20,206,218,1)"
-          style={{ textAlign: "center" }}
-        />
-        <Text style={styles.Txt248}>{I18n.t("common/home." + buttonText)}</Text>
+        <TouchableOpacity onPress={() => navigation.navigate(navigationDest)}>
+          <Icon
+            as={iconlib}
+            name={iconName}
+            size="75"
+            color="rgba(20,206,218,1)"
+            alignSelf="center"
+            style={{ textAlign: "center" }}
+          />
+          <Text style={styles.Txt248}>
+            {I18n.t("common/home." + buttonText)}
+          </Text>
+        </TouchableOpacity>
       </Pressable>
     );
   };

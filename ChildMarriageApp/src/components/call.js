@@ -11,7 +11,7 @@ const Call = (props) => {
     //     return;
     //   }
     const args = {
-      number: "+243" + props.phoneNumber,
+      number: props.phoneNumber,
       prompt: true,
     };
     // Make a call

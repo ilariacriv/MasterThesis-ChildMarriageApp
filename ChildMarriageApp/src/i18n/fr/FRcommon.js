@@ -6,6 +6,7 @@ export default {
     back: "Retour",
     save: "Sauver",
     home: "Accueil",
+    hello: "Salut",
   },
   welcomepage: {
     welcome: "Bienvenue",

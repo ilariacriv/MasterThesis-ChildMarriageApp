@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import I18n from "../i18n";
 import call from "react-native-phone-call";
-import { Pressable } from "native-base";
 import AppContext from "./AppContext";
 
 const EmergencyCall = () => {
@@ -25,10 +24,10 @@ const EmergencyCall = () => {
   };
 
   return (
-    <Pressable style={styles.button} onPress={triggerCall}>
+    <TouchableOpacity style={styles.button} onPress={triggerCall}>
       <Ionicons name="call" size={70} color="white" />
       <Text style={styles.text}>{text}</Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 };
 

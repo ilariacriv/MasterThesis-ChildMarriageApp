@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
 import {
@@ -36,17 +36,21 @@ const LearnScreen = ({ navigation }) => {
         alignItems="center"
         style={styles.Homebutton}
       >
-        <Icon
-          as={iconlib}
-          name={iconName}
-          size="75"
-          color="rgba(20,206,218,1)"
-          alignSelf="center"
-          style={{ textAlign: "center" }}
-        />
-        <Text style={styles.Txt248}>
-          {I18n.t("common/learn." + buttonText)}
-        </Text>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("LearnContent", navParams)}
+        >
+          <Icon
+            as={iconlib}
+            name={iconName}
+            size="78"
+            color="rgba(20,206,218,1)"
+            alignSelf="center"
+            style={{ textAlign: "center" }}
+          />
+          <Text style={styles.Txt248}>
+            {I18n.t("common/learn." + buttonText)}
+          </Text>
+        </TouchableOpacity>
       </Pressable>
     );
   };
