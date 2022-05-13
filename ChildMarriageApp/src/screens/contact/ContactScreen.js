@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
 import {
@@ -12,17 +12,21 @@ import {
 } from "native-base";
 import HelpBar from "../../components/helpBar";
 import I18n from "../../i18n";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+import Call from "../../components/call";
 
 const ContactScreen = ({ navigation }) => {
   const images = {
     aidprofen: require("../../../assets/aidprofen.png"),
   };
+
   const ContactBox = (name, phone, address, img) => {
     return (
       <HStack
         space={2}
         bg="white"
-        borderColor="gray.300"
+        borderColor="primary.600"
         borderWidth="1"
         alignItems="center"
         paddingX="5px"
@@ -30,10 +34,16 @@ const ContactScreen = ({ navigation }) => {
         justifyContent="space-around"
         alignSelf="center"
         width="95%"
+        rounded="xl"
       >
-        <Image size="lg" source={images[img]} alt={name} />
+        <VStack space={2}>
+          <Image size="lg" source={images[img]} alt={name} />
+          <HStack justifyContent="center" space={3}>
+            <Call phoneNumber={phone} />
+          </HStack>
+        </VStack>
         <VStack width="65%" space={1}>
-          <Heading>{name}</Heading>
+          <Heading color="primary.800">{name}</Heading>
           <Text fontSize="md">
             <Text bold>{I18n.t("common/contacts.phone") + ":\n"} </Text>
             {phone}

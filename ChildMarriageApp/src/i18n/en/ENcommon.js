@@ -60,17 +60,20 @@ export default {
   help: {
     close: "Close",
     home: "If you want to call an emergency line click on the red button.\n\nYou have 4 buttons on this page: if you want to learn something click on “Learn”, if you want to read o listen to a story click on “Stories”, if you want to know where to go to get help, click on “get help”, if you want to test what you have learnt with a quiz, click on “Play”. \n\n  If you want to go out, click on “Exit”",
-    settings: "",
-    learn: "",
+    settings:
+      'Here you can change the settings of the app. \nPress on the cirlcle to change the language and insert the emergency number if you want to change it.\nThe number needs to be 9 digits. \n\n Press "Save" to save the new settings.',
+    learn:
+      "Here  you can learn about different topics, press on the button of the topic you want to learn about!",
     questions: "",
     play: "",
     report: "",
     stories: "",
-    gethelp: "",
+    gethelp:
+      "Here you find some organizations to contact if you need help or have questions. \n\nYou can press on the phone icon to call them.",
   },
 
   questions: {
-    NA: "This functionality will be available soon",
+    NA: 'This functionality will be available soon. If you have urgent quetsions, you can contact one of the organizations in the "Get help" section.',
   },
 
   play: {
@@ -78,7 +81,7 @@ export default {
   },
 
   report: {
-    NA: "This functionality will be available soon",
+    NA: 'This functionality will be available soon. If you have to report a case, you can contact one of the organizations in the "Get help" section.',
   },
 
   stories: {
