@@ -15,9 +15,12 @@ import I18n from "../../i18n";
 
 const StoriesScreen = ({ navigation }) => {
   const images = {
-    anne: require("../../../assets/blackgirl.jpeg"),
+    s1: require("../../../assets/stories/s1.jpeg"),
   };
-  const StoryBox = (name, navigationDest, shorttext, img) => {
+  const StoryBox = (id) => {
+    const navParams = {
+      id: id,
+    };
     return (
       <HStack
         space={2}
@@ -32,11 +35,14 @@ const StoriesScreen = ({ navigation }) => {
         alignSelf="center"
         width="95%"
       >
-        <Image size="lg" source={images[img]} alt={name} />
+        <Image size="lg" source={images["s" + id]} alt={"img" + id} />
         <VStack width="65%" space={1}>
-          <Heading>{name}</Heading>
-          <Text>{shorttext}</Text>
-          <Button size="sm" onPress={() => navigation.navigate(navigationDest)}>
+          <Heading> {I18n.t("stories/s" + id + ".name")}</Heading>
+          <Text numberOfLines={2}> {I18n.t("stories/s" + id + ".text")}</Text>
+          <Button
+            size="sm"
+            onPress={() => navigation.navigate("StoryContent", navParams)}
+          >
             {I18n.t("common/stories.open")}
           </Button>
         </VStack>
@@ -57,14 +63,7 @@ const StoriesScreen = ({ navigation }) => {
               justifyContent: "center",
             }}
           >
-            <VStack space={2}>
-              {StoryBox(
-                "Anne",
-                "Anne",
-                "Anne was 13 years old when she got married...",
-                "anne"
-              )}
-            </VStack>
+            <VStack space={2}>{StoryBox(1)}</VStack>
           </ScrollView>
           <HStack
             paddingTop="2"

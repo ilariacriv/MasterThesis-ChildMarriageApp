@@ -7,6 +7,7 @@ import LearnContentScreen from "./src/screens/learn/LearnContentScreen";
 import PlayScreen from "./src/screens/quiz/PlayScreen";
 import ContactScreen from "./src/screens/contact/ContactScreen";
 import StoriesScreen from "./src/screens/stories/StoriesScreen";
+import StoryContentScreen from "./src/screens/stories/StoryContentScreen";
 import SettingsScreen from "./src/screens/home/SettingsScreen";
 import { theme } from "./src/style/theme";
 import { NavigationContainer } from "@react-navigation/native";
@@ -56,6 +57,7 @@ export default function App() {
             <Stack.Screen name="Report" component={ReportScreen} />
             <Stack.Screen name="Questions" component={QuestionsScreen} />
             <Stack.Screen name="LearnContent" component={LearnContentScreen} />
+            <Stack.Screen name="StoryContent" component={StoryContentScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </NativeBaseProvider>

@@ -7,6 +7,7 @@ import srh from "./ENshrhLearn";
 import sexuality from "./ENsexLearn";
 import menstruations from "./ENmenstruationsLearn";
 import commquest from "./ENcommonQuestionsLearn";
+import stories from "./ENstories";
 
 export default {
   // mapKeys is only used to add a namespace on keys
@@ -18,4 +19,5 @@ export default {
   ...mapKeys(sexuality, (_, key) => `sexuality/${key}`),
   ...mapKeys(menstruations, (_, key) => `menstruations/${key}`),
   ...mapKeys(commquest, (_, key) => `commquest/${key}`),
+  ...mapKeys(stories, (_, key) => `stories/${key}`),
 };

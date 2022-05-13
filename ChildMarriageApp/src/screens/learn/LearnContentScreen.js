@@ -6,7 +6,6 @@ import {
   HStack,
   VStack,
   Button,
-  Pressable,
   ScrollView,
   Box,
   Text,
