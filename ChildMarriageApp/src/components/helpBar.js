@@ -1,24 +1,79 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { HStack, Pressable, ScrollView, VStack } from "native-base";
 import { Overlay, Text, Button } from "@rneui/base";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import I18n from "../i18n";
+import { Audio } from "expo-av";
+import AppContext from "./AppContext";
 
 const HelpBar = (props) => {
   const [visible, setVisible] = useState(false);
+  const [sound, setSound] = React.useState();
+  const [soundOn, setSoundOn] = React.useState(false);
+  const myContext = useContext(AppContext);
+  const language = myContext.language;
+
+  const audiourls =
+    language == "en"
+      ? {
+          home: require("../../audios/en/home.mp4"),
+          learn: require("../../audios/en/noAudio.mp4"),
+          stories: require("../../audios/en/noAudio.mp4"),
+          gethelp: require("../../audios/en/noAudio.mp4"),
+          report: require("../../audios/en/noAudio.mp4"),
+          play: require("../../audios/en/noAudio.mp4"),
+          ask: require("../../audios/en/noAudio.mp4"),
+          learncontent: require("../../audios/en/noAudio.mp4"),
+          settings: require("../../audios/en/noAudio.mp4"),
+        }
+      : {
+          home: require("../../audios/en/noAudio.mp4"),
+          learn: require("../../audios/en/noAudio.mp4"),
+          stories: require("../../audios/en/noAudio.mp4"),
+          gethelp: require("../../audios/en/noAudio.mp4"),
+          report: require("../../audios/en/noAudio.mp4"),
+          play: require("../../audios/en/noAudio.mp4"),
+          ask: require("../../audios/en/noAudio.mp4"),
+          learncontent: require("../../audios/en/noAudio.mp4"),
+          settings: require("../../audios/en/noAudio.mp4"),
+        };
+
+  async function playSound() {
+    if (!soundOn) {
+      //   console.log("Loading Sound");
+      const { sound } = await Audio.Sound.createAsync(audiourls[props.page]);
+      setSound(sound);
+      setSoundOn(true);
+      await sound.playAsync();
+    } else {
+      await sound.stopAsync();
+      setSoundOn(false);
+    }
+  }
+
+  React.useEffect(() => {
+    return sound
+      ? () => {
+          //    console.log("Unloading Sound");
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   const toggleOverlay = () => {
     setVisible(!visible);
   };
   return (
     <HStack justifyContent="space-between" paddingX="10px">
-      <FontAwesome5
-        name="assistive-listening-systems"
-        size={50}
-        color="black"
-      />
+      <TouchableOpacity onPress={playSound}>
+        <FontAwesome5
+          name="assistive-listening-systems"
+          size={50}
+          color="black"
+        />
+      </TouchableOpacity>
       <Pressable>
         <TouchableOpacity onPress={toggleOverlay}>
           <Entypo name="help-with-circle" size={50} color="black" />

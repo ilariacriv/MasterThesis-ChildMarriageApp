@@ -67,6 +67,7 @@ export default {
     learn: "",
     questions: "",
     play: "",
+    learncontent: "",
     report: "",
     stories: "",
     gethelp: "",

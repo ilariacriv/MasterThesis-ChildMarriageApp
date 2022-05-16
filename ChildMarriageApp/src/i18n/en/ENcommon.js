@@ -68,7 +68,9 @@ export default {
     questions: "",
     play: "",
     report: "",
-    stories: "",
+    learncontent: "",
+    stories:
+      "Here you can find some stories that you can read. Click on 'open' to read the story.",
     gethelp:
       "Here you find some organizations to contact if you need help or have questions. \n\nYou can press on the phone icon to call them.",
   },

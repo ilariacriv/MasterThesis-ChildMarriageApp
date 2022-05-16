@@ -24,9 +24,8 @@ const StoriesScreen = ({ navigation }) => {
     return (
       <HStack
         space={2}
-        margin="15px"
         bg="white"
-        borderColor="gray.300"
+        borderColor="primary.600"
         borderWidth="1"
         alignItems="center"
         paddingX="5px"
@@ -34,10 +33,14 @@ const StoriesScreen = ({ navigation }) => {
         justifyContent="space-around"
         alignSelf="center"
         width="95%"
+        rounded="xl"
       >
         <Image size="lg" source={images["s" + id]} alt={"img" + id} />
         <VStack width="65%" space={1}>
-          <Heading> {I18n.t("stories/s" + id + ".name")}</Heading>
+          <Heading color="primary.800">
+            {" "}
+            {I18n.t("stories/s" + id + ".name")}
+          </Heading>
           <Text numberOfLines={2}> {I18n.t("stories/s" + id + ".text")}</Text>
           <Button
             size="sm"

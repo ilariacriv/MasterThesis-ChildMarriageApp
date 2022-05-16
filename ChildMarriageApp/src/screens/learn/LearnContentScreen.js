@@ -54,7 +54,7 @@ const LearnContentScreen = ({ route, navigation }) => {
     <SafeAreaView>
       <View>
         <VStack space={4} width="100%" height="100%" bg="warning.50">
-          <HelpBar page="questions" />
+          <HelpBar page="learncontent" />
           <Heading textAlign="center" size="2xl" alignSelf="center">
             {I18n.t(title + "/title")}
           </Heading>

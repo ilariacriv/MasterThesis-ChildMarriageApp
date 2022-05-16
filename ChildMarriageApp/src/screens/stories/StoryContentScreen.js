@@ -11,7 +11,6 @@ import {
   Box,
   Text,
 } from "native-base";
-import HelpBar from "../../components/helpBar";
 import I18n from "../../i18n";
 
 const images = {
@@ -25,8 +24,12 @@ const StoryContentScreen = ({ route, navigation }) => {
     <SafeAreaView>
       <View>
         <VStack space={1} width="100%" height="100%" bg="warning.50">
-          <HelpBar page="questions" />
-          <Heading textAlign="center" size="2xl" alignSelf="center">
+          <Heading
+            paddingTop={3}
+            textAlign="center"
+            size="2xl"
+            alignSelf="center"
+          >
             {I18n.t("stories/" + sid + ".name")}
           </Heading>
           <ScrollView
