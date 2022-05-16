@@ -30,7 +30,9 @@ const QuestionsScreen = ({ navigation }) => {
           >
             <Box>
               <Center>
-                <Text>{I18n.t("common/questions.NA")}</Text>
+                <Text paddingX={3} fontSize={25}>
+                  {I18n.t("common/questions.NA")}
+                </Text>
               </Center>
             </Box>
           </ScrollView>

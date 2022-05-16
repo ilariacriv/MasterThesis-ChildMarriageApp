@@ -30,7 +30,9 @@ const ReportScreen = ({ navigation }) => {
           >
             <Box>
               <Center>
-                <Text>{I18n.t("common/report.NA")}</Text>
+                <Text paddingX={3} fontSize={25}>
+                  {I18n.t("common/report.NA")}
+                </Text>
               </Center>
             </Box>
           </ScrollView>
