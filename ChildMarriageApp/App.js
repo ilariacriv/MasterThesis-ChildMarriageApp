@@ -5,6 +5,8 @@ import HomeScreen from "./src/screens/home/HomeScreen";
 import LearnScreen from "./src/screens/learn/LearnScreen";
 import LearnContentScreen from "./src/screens/learn/LearnContentScreen";
 import PlayScreen from "./src/screens/quiz/PlayScreen";
+import QuizScreen from "./src/screens/quiz/QuizScreen";
+import QuizResultScreen from "./src/screens/quiz/QuizResultScreen";
 import ContactScreen from "./src/screens/contact/ContactScreen";
 import StoriesScreen from "./src/screens/stories/StoriesScreen";
 import StoryContentScreen from "./src/screens/stories/StoryContentScreen";
@@ -58,6 +60,8 @@ export default function App() {
             <Stack.Screen name="Questions" component={QuestionsScreen} />
             <Stack.Screen name="LearnContent" component={LearnContentScreen} />
             <Stack.Screen name="StoryContent" component={StoryContentScreen} />
+            <Stack.Screen name="Quiz" component={QuizScreen} />
+            <Stack.Screen name="QuizResult" component={QuizResultScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </NativeBaseProvider>

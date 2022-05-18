@@ -27,6 +27,7 @@ const HelpBar = (props) => {
           ask: require("../../audios/en/noAudio.mp4"),
           learncontent: require("../../audios/en/noAudio.mp4"),
           settings: require("../../audios/en/noAudio.mp4"),
+          quiz: require("../../audios/en/noAudio.mp4"),
         }
       : {
           home: require("../../audios/en/noAudio.mp4"),
@@ -38,6 +39,7 @@ const HelpBar = (props) => {
           ask: require("../../audios/en/noAudio.mp4"),
           learncontent: require("../../audios/en/noAudio.mp4"),
           settings: require("../../audios/en/noAudio.mp4"),
+          quiz: require("../../audios/en/noAudio.mp4"),
         };
 
   async function playSound() {

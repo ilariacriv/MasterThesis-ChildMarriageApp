@@ -1,30 +1,22 @@
-import { I18nManager, StyleSheet, View } from "react-native";
+import { StyleSheet, View, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
-import {
-  Heading,
-  HStack,
-  VStack,
-  Button,
-  Text,
-  Pressable,
-  ScrollView,
-} from "native-base";
+import { Heading, HStack, VStack, Button, ScrollView } from "native-base";
 import HelpBar from "../../components/helpBar";
 import { AntDesign } from "@expo/vector-icons";
 import I18n from "../../i18n";
 
 const PlayScreen = ({ navigation }) => {
-  const images = {
-    anne: require("../../../assets/blackgirl.jpeg"),
-  };
   const QuizBox = (name, navigationDest) => {
+    const navParams = {
+      title: name,
+    };
     return (
-      <Pressable onPress={() => navigation.navigate(navigationDest)}>
+      <TouchableOpacity onPress={() => navigation.navigate("Quiz", navParams)}>
         <HStack
           space={2}
           bg="white"
-          borderColor="gray.300"
+          borderColor="primary.600"
           borderWidth="1"
           alignItems="center"
           paddingX="5px"
@@ -32,17 +24,18 @@ const PlayScreen = ({ navigation }) => {
           justifyContent="space-around"
           alignSelf="center"
           width="95%"
+          rounded="xl"
         >
           <AntDesign name="play" size={90} color="green" />
           <VStack width="65%" space={1}>
-            <Heading>
+            <Heading color="primary.800">
               {I18n.t("common/play.quiz") +
                 ": " +
                 I18n.t("common/learn." + name)}
             </Heading>
           </VStack>
         </HStack>
-      </Pressable>
+      </TouchableOpacity>
     );
   };
 
