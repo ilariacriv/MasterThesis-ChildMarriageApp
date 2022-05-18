@@ -13,7 +13,7 @@ const HelpBar = (props) => {
   const [sound, setSound] = React.useState();
   const [soundOn, setSoundOn] = React.useState(false);
   const myContext = useContext(AppContext);
-  const language = myContext.language;
+  const language = myContext.language == "fr" ? "fr" : "en";
 
   const audiourls =
     language == "en"
