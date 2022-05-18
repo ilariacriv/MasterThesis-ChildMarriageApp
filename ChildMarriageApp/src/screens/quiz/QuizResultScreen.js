@@ -23,7 +23,7 @@ const QuizResultScreen = ({ route, navigation }) => {
           bg="warning.50"
           justifyContent="center"
         >
-          <HelpBar page="quiz" />
+          <HelpBar page="quizresult" />
           <Heading size="2xl" alignSelf="center">
             {I18n.t("common/play.quiz") +
               ": " +

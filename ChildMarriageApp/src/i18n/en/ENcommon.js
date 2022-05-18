@@ -60,15 +60,19 @@ export default {
 
   help: {
     close: "Close",
-    home: "If you want to call an emergency line click on the red button.\n\nYou have 4 buttons on this page: if you want to learn something click on “Learn”, if you want to read o listen to a story click on “Stories”, if you want to know where to go to get help, click on “get help”, if you want to test what you have learnt with a quiz, click on “Play”. \n\n  If you want to go out, click on “Exit”",
+    home: "If you want to call an emergency line click on the red button.\n\nYou have 6 buttons on this page: if you want to learn something click on “Learn”, if you want to read o listen to a story click on “Stories”, if you want to know where to go to get help, click on “get help”, if you want to test what you have learnt with a quiz, click on “Play”,  if you want to report a case of child marriage click on “report a case”, if you want to ask questions click on “ask questions”. \n\n  If you want to go out, click on “Exit”",
     settings:
       'Here you can change the settings of the app. \nPress on the cirlcle to change the language and insert the emergency number if you want to change it.\nThe number needs to be 9 digits. \n\n Press "Save" to save the new settings.',
     learn:
       "Here  you can learn about different topics, press on the button of the topic you want to learn about!",
     questions: "",
-    play: "",
+    play: "Here you can play quizzes to see what you have learn, click on the green button to play a quiz",
+    quiz: "Welcome in the quiz, here you find a question, if you think it is true click on the green button, if you think it is false click on the red button.",
+    quizresult:
+      "Congratulations!\n\n If you are not happy with your score you can click on the button to learn more!",
     report: "",
-    learncontent: "",
+    learncontent:
+      "Here you can learn new things, click on a question to know the answer and click on it again to close it. \n\nEnjoy!",
     stories:
       "Here you can find some stories that you can read. Click on 'open' to read the story.",
     gethelp:
