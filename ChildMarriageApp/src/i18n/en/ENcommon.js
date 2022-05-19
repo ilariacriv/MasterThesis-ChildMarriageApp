@@ -74,7 +74,7 @@ export default {
       "Congratulations!\n\n If you are not happy with your score you can click on the button to learn more!",
     report: "",
     learncontent:
-      "Here you can learn new things, click on a question to know the answer and click on it again to close it. \n\nEnjoy!",
+      "Here you can learn new things, click on a question to know the answer and click on it again to close it. \n\n If you want to test what you have learnt, you can play the quiz by ptressing the green button in the bottom of the page. \n\nEnjoy!",
     stories:
       "Here you can find some stories that you can read. Click on 'open' to read the story.",
     gethelp:

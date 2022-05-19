@@ -12,6 +12,7 @@ import {
 } from "native-base";
 import HelpBar from "../../components/helpBar";
 import I18n from "../../i18n";
+import { AntDesign } from "@expo/vector-icons";
 
 const questionNumber = {
   cm: 2,
@@ -50,6 +51,38 @@ const LearnContentScreen = ({ route, navigation }) => {
     );
   };
 
+  const QuizBox = (name) => {
+    const navParams = {
+      title: name,
+    };
+    return (
+      <TouchableOpacity onPress={() => navigation.navigate("Quiz", navParams)}>
+        <HStack
+          space={2}
+          bg="white"
+          borderColor="primary.600"
+          borderWidth="1"
+          alignItems="center"
+          paddingX="5px"
+          paddingY="10px"
+          justifyContent="space-around"
+          alignSelf="center"
+          width="90%"
+          rounded="xl"
+        >
+          <AntDesign name="play" size={70} color="green" />
+          <VStack width="70%" space={1}>
+            <Heading color="primary.800">
+              {I18n.t("common/play.quiz") +
+                ": " +
+                I18n.t("common/learn." + name)}
+            </Heading>
+          </VStack>
+        </HStack>
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <SafeAreaView>
       <View>
@@ -69,6 +102,7 @@ const LearnContentScreen = ({ route, navigation }) => {
               )}
             </VStack>
           </ScrollView>
+          {title == "commquest" ? undefined : QuizBox(title)}
           <HStack
             paddingTop="2"
             space={3}

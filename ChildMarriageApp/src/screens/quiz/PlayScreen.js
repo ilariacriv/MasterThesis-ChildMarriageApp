@@ -7,7 +7,7 @@ import { AntDesign } from "@expo/vector-icons";
 import I18n from "../../i18n";
 
 const PlayScreen = ({ navigation }) => {
-  const QuizBox = (name, navigationDest) => {
+  const QuizBox = (name) => {
     const navParams = {
       title: name,
     };
@@ -26,8 +26,8 @@ const PlayScreen = ({ navigation }) => {
           width="95%"
           rounded="xl"
         >
-          <AntDesign name="play" size={90} color="green" />
-          <VStack width="65%" space={1}>
+          <AntDesign name="play" size={80} color="green" />
+          <VStack width="70%" space={1}>
             <Heading color="primary.800">
               {I18n.t("common/play.quiz") +
                 ": " +
@@ -53,9 +53,12 @@ const PlayScreen = ({ navigation }) => {
             }}
           >
             <VStack space={2}>
-              {QuizBox("edu", "Play")}
-              {QuizBox("laws", "Play")}
-              {QuizBox("srh", "Play")}
+              {QuizBox("edu")}
+              {QuizBox("laws")}
+              {QuizBox("srh")}
+              {QuizBox("sexuality")}
+              {QuizBox("cm")}
+              {QuizBox("menstruations")}
             </VStack>
           </ScrollView>
           <HStack
