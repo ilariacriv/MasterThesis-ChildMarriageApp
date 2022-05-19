@@ -15,17 +15,25 @@ const QuizScreen = ({ route, navigation }) => {
   const [points, setPoints] = useState(0);
   const [questionNum, setQuestionNum] = useState(1);
 
+  const clear = () => {
+    setPoints(0);
+    setQuestionNum(1);
+  };
+
   const answerQuestion = (answer) => {
+    let curr = points;
     if (answer == answers["q" + questionNum]) {
       setPoints(points + 1);
+      curr = points + 1;
     }
 
     if (questionNum == total) {
       const navParams = {
         title: title,
-        points: points,
+        points: curr,
         total: total,
       };
+      clear();
       navigation.navigate("QuizResult", navParams);
     } else {
       setQuestionNum(questionNum + 1);
@@ -40,8 +48,8 @@ const QuizScreen = ({ route, navigation }) => {
         borderColor="primary.600"
         borderWidth="1"
         alignItems="center"
-        paddingX="5px"
-        paddingY="10px"
+        paddingX="10px"
+        paddingY="20px"
         justifyContent="space-around"
         alignSelf="center"
         width="85%"
@@ -77,7 +85,9 @@ const QuizScreen = ({ route, navigation }) => {
               justifyContent: "center",
             }}
           >
-            <VStack space={2}>{QuestionBox()}</VStack>
+            <VStack space={2} paddingTop="20px">
+              {QuestionBox()}
+            </VStack>
           </ScrollView>
           <HStack space={10} justifyContent="center" paddingBottom={5}>
             <TouchableOpacity
@@ -103,14 +113,20 @@ const QuizScreen = ({ route, navigation }) => {
             paddingBottom="3"
           >
             <Button
-              onPress={() => navigation.navigate("Home")}
+              onPress={() => {
+                clear();
+                navigation.navigate("Home");
+              }}
               size="lg"
               width="2/5"
             >
               {I18n.t("common/common.home")}
             </Button>
             <Button
-              onPress={() => navigation.navigate("Play")}
+              onPress={() => {
+                clear();
+                navigation.navigate("Play");
+              }}
               size="lg"
               width="2/5"
               text

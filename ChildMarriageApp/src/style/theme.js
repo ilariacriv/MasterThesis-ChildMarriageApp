@@ -1,5 +1,3 @@
 import { extendTheme } from "native-base";
 
-export const theme = extendTheme({
-  colors: {},
-});
+export const theme = extendTheme({});

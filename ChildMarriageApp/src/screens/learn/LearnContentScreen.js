@@ -15,7 +15,13 @@ import I18n from "../../i18n";
 import { AntDesign } from "@expo/vector-icons";
 
 const questionNumber = {
-  cm: 2,
+  cm: 5,
+  edu: 0,
+  laws: 0,
+  srh: 0,
+  sexuality: 0,
+  menstruations: 0,
+  commquest: 0,
 };
 
 const LearnContentScreen = ({ route, navigation }) => {
