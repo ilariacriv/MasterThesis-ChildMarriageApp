@@ -51,7 +51,8 @@ export default {
       "Si vous souhaitez que le texte soit lu à haute voix, vous pouvez cliquer sur ce bouton:",
     slide3:
       "Les éléments bleus, comme ceux présentés ci-dessous, sont des boutons, vous pouvez cliquer dessus pour changer de page.",
-    slide4: "Vous êtes prêt, appuyez sur le bouton ci-dessous pour commencer!",
+    slide4: "",
+    slide5: "Vous êtes prêt, appuyez sur le bouton ci-dessous pour commencer!",
   },
 
   contacts: {
