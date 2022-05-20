@@ -21,7 +21,7 @@ const questionNumber = {
   srh: 0,
   sexuality: 0,
   menstruations: 0,
-  commquest: 0,
+  commquest: 1,
 };
 
 const LearnContentScreen = ({ route, navigation }) => {

@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
 import {
@@ -10,11 +10,40 @@ import {
   ScrollView,
   Text,
   Center,
+  Pressable,
+  Icon,
 } from "native-base";
+import { Entypo } from "@expo/vector-icons";
 import HelpBar from "../../components/helpBar";
 import I18n from "../../i18n";
 
 const ReportScreen = ({ navigation }) => {
+  const ContentButton = (buttonText, navigationDest, iconName, iconlib) => {
+    return (
+      <Pressable
+        onPress={() => navigation.navigate(navigationDest)}
+        bg="coolGray.100"
+        rounded="8"
+        borderWidth="1"
+        style={styles.Homebutton}
+      >
+        <TouchableOpacity onPress={() => navigation.navigate(navigationDest)}>
+          <Icon
+            as={iconlib}
+            name={iconName}
+            size="75"
+            color="rgba(20,206,218,1)"
+            alignSelf="center"
+            style={{ textAlign: "center" }}
+          />
+          <Text style={styles.Txt248}>
+            {I18n.t("common/home." + buttonText)}
+          </Text>
+        </TouchableOpacity>
+      </Pressable>
+    );
+  };
+
   return (
     <SafeAreaView>
       <View>
@@ -35,6 +64,9 @@ const ReportScreen = ({ navigation }) => {
                 </Text>
               </Center>
             </Box>
+            <Center paddingTop={10}>
+              {ContentButton("gethelp", "Contact", "address", Entypo)}
+            </Center>
           </ScrollView>
           <HStack
             paddingTop="2"
@@ -69,6 +101,36 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     justifyContent: "center",
+  },
+  Homebutton: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: 18,
+    paddingBottom: 10,
+    paddingLeft: 2,
+    paddingRight: 2,
+    borderRadius: 40,
+    backgroundColor: "white",
+    /*  linear-gradient(0deg, rgba(246,246,246,1), rgba(246,246,246,1)), linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)) */
+    borderWidth: 2,
+    borderStyle: "solid",
+    borderColor: "rgba(20,206,218,1)",
+    shadowColor: "rgba(0,0,0,0.25)",
+    elevation: 0,
+    shadowOffset: { width: 0, height: 4 },
+    width: 149,
+    height: 160,
+  },
+  Txt248: {
+    fontSize: 22,
+    fontWeight: "700",
+    letterSpacing: -0.4,
+    color: "rgba(20,206,218,1)",
+    textAlign: "center",
+    justifyContent: "center",
+    height: 58,
   },
 });
 
