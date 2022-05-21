@@ -50,8 +50,11 @@ export default {
     slide3:
       "The blue elements, like the ones showed below, are buttons, you can click them to change page",
     slide4:
-      "The red button on the top of the page allows you to start an urgent call, you can set the phone number to call in the Settings page.\n\n You can access the settings page from the home page.\n In the settings page you can also change the language of the app.",
-    slide5: "You are ready, press the “Start” button below to start!",
+      "The red button on the top of the page allows you to start an urgent call, you can set the phone number to call in the Settings page.",
+    slide5:
+      "You can access the settings page from the bottom of the home page.\n In the settings page you can also change the language of the app.",
+    slide6:
+      "You are ready, press the “Start” button below to go in the home page!",
   },
 
   contacts: {

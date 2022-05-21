@@ -52,11 +52,13 @@ export default {
     slide3:
       "Les éléments bleus, comme ceux présentés ci-dessous, sont des boutons, vous pouvez cliquer dessus pour changer de page.",
     slide4:
-      "Le bouton rouge en haut de la page vous permet de passer un appel d’urgence, vous pouvez rentrer le numéro d’urgence à appeler dans les paramètres." +
-      "\n\nVous pouvez accéder aux paramètres depuis la page d’accueil." +
+      "Le bouton rouge en haut de la page vous permet de passer un appel d’urgence, vous pouvez rentrer le numéro d’urgence à appeler dans les paramètres.",
+    slide5:
+      "\n\nVous pouvez accéder à la page des paramètres depuis le bas de la page d'accueil." +
       "\nDans les paramètres vous pouvez changer la langue de l’application.",
 
-    slide5: "Vous êtes prêt, appuyez sur le bouton ci-dessous pour commencer!",
+    slide6:
+      "Vous êtes prêt, appuyez sur le bouton ci-dessous pour accéder à la page d'accueil!",
   },
 
   contacts: {

@@ -127,12 +127,12 @@ const WelcomeScreen = ({ navigation }) => {
       );
     }
 
-    if (num == 4) {
+    if (num == 4 || num == 5) {
       return (
         <Box alignItems="center" justifyContent="space-between" height="full">
           <VStack height="80%" justifyContent="center" space={4}>
             <Text bold fontSize="md" paddingBottom="20px" textAlign="center">
-              {I18n.t("common/tutorial.slide4")}
+              {I18n.t("common/tutorial.slide" + num)}
             </Text>
           </VStack>
           <HStack space={7}>
@@ -154,12 +154,12 @@ const WelcomeScreen = ({ navigation }) => {
         </Box>
       );
     }
-    if (num == 5) {
+    if (num == 6) {
       return (
         <Box alignItems="center" justifyContent="space-between" height="full">
           <VStack height="80%" justifyContent="center" space={4}>
             <Text bold fontSize="md" paddingBottom="20px" textAlign="center">
-              {I18n.t("common/tutorial.slide5")}
+              {I18n.t("common/tutorial.slide6")}
             </Text>
           </VStack>
           <TouchableOpacity onPress={() => setNum(num - 1)}>

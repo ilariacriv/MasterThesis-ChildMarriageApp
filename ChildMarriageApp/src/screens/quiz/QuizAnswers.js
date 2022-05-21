@@ -23,4 +23,14 @@ export default {
     q5: true,
     q6: true,
   },
+  sexuality: {
+    num: 0,
+    q1: true,
+    q2: false,
+  },
+  menstruations: {
+    num: 0,
+    q1: true,
+    q2: false,
+  },
 };
