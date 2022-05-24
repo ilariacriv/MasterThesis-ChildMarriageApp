@@ -48,7 +48,7 @@ export default {
     slide2_2: "If you are stuck and need help you can click on this button:",
     slide2_3: "If you want the text to be read out loud you can click this:",
     slide3:
-      "The blue elements, like the ones showed below, are buttons, you can click them to change page",
+      "The blue elements, like the ones showed below, are buttons. You can click on them to change page",
     slide4:
       "The red button on the top of the page allows you to start an urgent call, you can set the phone number to call in the Settings page.",
     slide5:
@@ -67,7 +67,7 @@ export default {
     close: "Close",
     home: "If you want to call an emergency line click on the red button.\nYou can set the emergency number in the settings page.\n\nYou have 6 buttons on this page: if you want to learn something click on “Learn”, if you want to read o listen to a story click on “Stories”, if you want to know where to go to get help, click on “get help”, if you want to test what you have learnt with a quiz, click on “Play”,  if you want to report a case of child marriage click on “report a case”, if you want to ask questions click on “ask questions”. \n\n  If you want to go out, click on “Exit”",
     settings:
-      'Here you can change the settings of the app. \nPress on the cirlcle to change the language and insert the emergency number if you want to change it.\nThe number needs to be 9 digits. \n\n Press "Save" to save the new settings.',
+      'Here you can change the settings of the app. \n\nPress on the small cirlcle to change the language. \nInsert a new emergency number if you want to change it.\nThe number needs to be 9 digits without spaces. The country code is not necessary. \n\n Press "Save" to save the new settings.',
     learn:
       "Here  you can learn about different topics, press on the button of the topic you want to learn about!",
     questions: "",

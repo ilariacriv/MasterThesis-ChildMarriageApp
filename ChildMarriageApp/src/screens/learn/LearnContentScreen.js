@@ -15,7 +15,7 @@ import I18n from "../../i18n";
 import { AntDesign } from "@expo/vector-icons";
 
 const questionNumber = {
-  cm: 5,
+  cm: 8,
   edu: 0,
   laws: 0,
   srh: 0,

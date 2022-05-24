@@ -2,7 +2,16 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import React, { useContext } from "react";
 import AppContext from "../../components/AppContext";
 import EmergencyCall from "../../components/emergencyCall";
-import { VStack, Heading, Button, Box, Text, HStack, Image } from "native-base";
+import {
+  VStack,
+  Heading,
+  Button,
+  Box,
+  Text,
+  HStack,
+  Image,
+  ScrollView,
+} from "native-base";
 import {
   MaterialCommunityIcons,
   Entypo,
@@ -10,6 +19,11 @@ import {
 } from "@expo/vector-icons";
 import I18n from "../../i18n";
 import { StyleSheet, TouchableOpacity } from "react-native";
+import {
+  responsiveHeight,
+  responsiveScreenFontSize,
+  responsiveWidth,
+} from "react-native-responsive-dimensions";
 
 const WelcomeScreen = ({ navigation }) => {
   const myContext = useContext(AppContext);
@@ -20,15 +34,77 @@ const WelcomeScreen = ({ navigation }) => {
   const getContent = () => {
     if (num == 1) {
       return (
-        <Box alignItems="center" justifyContent="space-between" height="full">
-          <VStack height="80%" justifyContent="center">
-            <Text bold fontSize="md" paddingBottom="20px" textAlign="center">
-              {I18n.t("common/tutorial.slide1_1")}
+        <VStack justifyContent="center">
+          <Text bold fontSize={19} textAlign="center">
+            {I18n.t("common/tutorial.slide1_1") + "\n"}
+          </Text>
+          <Text bold fontSize={19} textAlign="center">
+            {I18n.t("common/tutorial.slide1_2")}
+          </Text>
+        </VStack>
+      );
+    }
+    if (num == 2) {
+      return (
+        <VStack alignItems="center" justifyContent="center" space={3}>
+          <Text bold fontSize={18} textAlign="center">
+            {I18n.t("common/tutorial.slide2_1")}
+          </Text>
+          <HStack
+            space={1}
+            justifyContent="space-evenly"
+            alignContent="center"
+            alignItems="center"
+          >
+            <Text bold fontSize={18} textAlign="center" width="80%">
+              {I18n.t("common/tutorial.slide2_2")}
             </Text>
-            <Text bold fontSize="md" paddingBottom="20px" textAlign="center">
-              {I18n.t("common/tutorial.slide1_2")}
+            <Entypo name="help-with-circle" size={50} color="black" />
+          </HStack>
+          <HStack space={1} alignContent="center" alignItems="center">
+            <Text bold fontSize={18} textAlign="center" width="80%">
+              {I18n.t("common/tutorial.slide2_3")}
             </Text>
-          </VStack>
+            <FontAwesome5
+              name="assistive-listening-systems"
+              size={50}
+              color="black"
+            />
+          </HStack>
+        </VStack>
+      );
+    }
+    if (num == 3) {
+      return (
+        <VStack justifyContent="center" alignItems="center">
+          <Text bold fontSize={19} textAlign="center">
+            {I18n.t("common/tutorial.slide3")}
+          </Text>
+          <Image
+            source={require("../../../assets/tutorial3.png")}
+            alt="tutorialImg"
+            resizeMode={"contain"}
+            height={responsiveWidth(50)}
+          />
+        </VStack>
+      );
+    }
+
+    if (num == 4 || num == 5 || num == 6) {
+      return (
+        <VStack justifyContent="center" space={4}>
+          <Text bold fontSize={19} textAlign="center">
+            {I18n.t("common/tutorial.slide" + num)}
+          </Text>
+        </VStack>
+      );
+    }
+  };
+
+  const getArrows = () => {
+    if (num == 1) {
+      return (
+        <HStack space={7}>
           <TouchableOpacity onPress={() => setNum(num + 1)}>
             <MaterialCommunityIcons
               name="arrow-right-bold-circle"
@@ -37,131 +113,11 @@ const WelcomeScreen = ({ navigation }) => {
               alignSelf="flex-end"
             />
           </TouchableOpacity>
-        </Box>
+        </HStack>
       );
-    }
-    if (num == 2) {
+    } else if (num == 6) {
       return (
-        <VStack
-          alignItems="center"
-          justifyContent="space-between"
-          height="full"
-          width="full"
-          space={4}
-        >
-          <VStack height="80%" justifyContent="center" space={5} width="full">
-            <Text bold fontSize="md" textAlign="center">
-              {I18n.t("common/tutorial.slide2_1")}
-            </Text>
-            <HStack
-              space={1}
-              justifyContent="space-evenly"
-              alignContent="center"
-            >
-              <Text bold fontSize="sm" textAlign="center" width="80%">
-                {I18n.t("common/tutorial.slide2_2")}
-              </Text>
-              <Entypo name="help-with-circle" size={50} color="black" />
-            </HStack>
-            <HStack space={1} alignContent="center">
-              <Text bold fontSize="sm" textAlign="center" width="80%">
-                {I18n.t("common/tutorial.slide2_3")}
-              </Text>
-              <FontAwesome5
-                name="assistive-listening-systems"
-                size={50}
-                color="black"
-              />
-            </HStack>
-          </VStack>
-          <HStack space={7}>
-            <TouchableOpacity onPress={() => setNum(num - 1)}>
-              <MaterialCommunityIcons
-                name="arrow-left-bold-circle"
-                size={50}
-                color="black"
-              />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setNum(num + 1)}>
-              <MaterialCommunityIcons
-                name="arrow-right-bold-circle"
-                size={50}
-                color="black"
-              />
-            </TouchableOpacity>
-          </HStack>
-        </VStack>
-      );
-    }
-    if (num == 3) {
-      return (
-        <Box alignItems="center" justifyContent="space-between" height="full">
-          <VStack height="80%" justifyContent="center">
-            <Text bold fontSize="md" textAlign="center">
-              {I18n.t("common/tutorial.slide3")}
-            </Text>
-            <Image
-              source={require("../../../assets/tutorial3.png")}
-              alt="tutorialImg"
-              resizeMode={"contain"}
-              height="50%"
-            />
-          </VStack>
-          <HStack space={7}>
-            <TouchableOpacity onPress={() => setNum(num - 1)}>
-              <MaterialCommunityIcons
-                name="arrow-left-bold-circle"
-                size={50}
-                color="black"
-              />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setNum(num + 1)}>
-              <MaterialCommunityIcons
-                name="arrow-right-bold-circle"
-                size={50}
-                color="black"
-              />
-            </TouchableOpacity>
-          </HStack>
-        </Box>
-      );
-    }
-
-    if (num == 4 || num == 5) {
-      return (
-        <Box alignItems="center" justifyContent="space-between" height="full">
-          <VStack height="80%" justifyContent="center" space={4}>
-            <Text bold fontSize="md" paddingBottom="20px" textAlign="center">
-              {I18n.t("common/tutorial.slide" + num)}
-            </Text>
-          </VStack>
-          <HStack space={7}>
-            <TouchableOpacity onPress={() => setNum(num - 1)}>
-              <MaterialCommunityIcons
-                name="arrow-left-bold-circle"
-                size={50}
-                color="black"
-              />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setNum(num + 1)}>
-              <MaterialCommunityIcons
-                name="arrow-right-bold-circle"
-                size={50}
-                color="black"
-              />
-            </TouchableOpacity>
-          </HStack>
-        </Box>
-      );
-    }
-    if (num == 6) {
-      return (
-        <Box alignItems="center" justifyContent="space-between" height="full">
-          <VStack height="80%" justifyContent="center" space={4}>
-            <Text bold fontSize="md" paddingBottom="20px" textAlign="center">
-              {I18n.t("common/tutorial.slide6")}
-            </Text>
-          </VStack>
+        <HStack space={7}>
           <TouchableOpacity onPress={() => setNum(num - 1)}>
             <MaterialCommunityIcons
               name="arrow-left-bold-circle"
@@ -169,7 +125,26 @@ const WelcomeScreen = ({ navigation }) => {
               color="black"
             />
           </TouchableOpacity>
-        </Box>
+        </HStack>
+      );
+    } else {
+      return (
+        <HStack space={7}>
+          <TouchableOpacity onPress={() => setNum(num - 1)}>
+            <MaterialCommunityIcons
+              name="arrow-left-bold-circle"
+              size={50}
+              color="black"
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setNum(num + 1)}>
+            <MaterialCommunityIcons
+              name="arrow-right-bold-circle"
+              size={50}
+              color="black"
+            />
+          </TouchableOpacity>
+        </HStack>
       );
     }
   };
@@ -177,11 +152,12 @@ const WelcomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <VStack
-        space={4}
+        space={2}
         width="100%"
         height="100%"
         bg="warning.50"
         alignItems="center"
+        justifyContent="center"
         flex={1}
       >
         <EmergencyCall />
@@ -195,11 +171,22 @@ const WelcomeScreen = ({ navigation }) => {
           borderWidth="1"
           width="90%"
           alignItems="center"
-          padding="20px"
+          padding="10px"
           justifyContent="space-between"
           flex={5}
         >
-          {getContent()}
+          <ScrollView
+            _contentContainerStyle={{
+              flexGrow: 1,
+              justifyContent: "center",
+              flexDirection: "column",
+            }}
+          >
+            <Box alignItems="center" justifyContent="space-between">
+              {getContent()}
+            </Box>
+          </ScrollView>
+          {getArrows()}
         </Box>
         <Button
           onPress={() => setNum(1) || navigation.navigate("Home")}
@@ -207,6 +194,9 @@ const WelcomeScreen = ({ navigation }) => {
           width="4/5"
           flex={1}
           marginBottom="3"
+          _text={{
+            fontSize: "xl",
+          }}
         >
           {I18n.t("common/welcomepage.start")}
         </Button>

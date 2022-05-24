@@ -20,6 +20,7 @@ import QuestionsScreen from "./src/screens/questions/QuestionsScreen";
 import React, { useState } from "react";
 import AppContext from "./src/components/AppContext";
 import * as Localization from "expo-localization";
+import { Text } from "native-base";
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,10 @@ export default function App() {
     updateLanguage,
     updateEmergencynumber,
   };
+
+  Text.defaultProps = Text.defaultProps || {};
+  Text.defaultProps.allowFontScaling = false;
+
   return (
     <AppContext.Provider value={userSettings}>
       <NativeBaseProvider theme={theme}>

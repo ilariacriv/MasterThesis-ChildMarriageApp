@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React, { useContext } from "react";
 import AppContext from "../../components/AppContext";
@@ -10,6 +10,7 @@ import {
   Icon,
   Pressable,
   ScrollView,
+  Text,
 } from "native-base";
 import {
   Ionicons,
@@ -20,6 +21,10 @@ import {
 } from "@expo/vector-icons";
 import HelpBar from "../../components/helpBar";
 import I18n from "../../i18n";
+import {
+  responsiveScreenFontSize,
+  responsiveWidth,
+} from "react-native-responsive-dimensions";
 
 const HomeScreen = ({ navigation }) => {
   const myContext = useContext(AppContext);
@@ -42,7 +47,12 @@ const HomeScreen = ({ navigation }) => {
             alignSelf="center"
             style={{ textAlign: "center" }}
           />
-          <Text style={styles.Txt248}>
+          <Text
+            paddingTop={3}
+            numberOfLines={2}
+            adjustsFontSizeToFit
+            style={styles.Txt248}
+          >
             {I18n.t("common/home." + buttonText)}
           </Text>
         </TouchableOpacity>
@@ -57,7 +67,9 @@ const HomeScreen = ({ navigation }) => {
         <HelpBar page="home" />
         <ScrollView
           _contentContainerStyle={{
+            flexGrow: 1,
             justifyContent: "center",
+            flexDirection: "column",
           }}
         >
           <VStack space={2}>
@@ -136,17 +148,16 @@ const styles = StyleSheet.create({
     shadowColor: "rgba(0,0,0,0.25)",
     elevation: 0,
     shadowOffset: { width: 0, height: 4 },
-    width: 149,
-    height: 160,
+    width: responsiveWidth(45),
+    height: responsiveWidth(50),
   },
   Txt248: {
-    fontSize: 22,
+    fontSize: responsiveScreenFontSize(3),
     fontWeight: "700",
     letterSpacing: -0.4,
     color: "rgba(20,206,218,1)",
     textAlign: "center",
     justifyContent: "center",
-    height: 58,
   },
   container: {
     flex: 1,

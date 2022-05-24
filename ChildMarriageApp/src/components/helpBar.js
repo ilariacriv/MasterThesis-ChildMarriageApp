@@ -9,6 +9,9 @@ import { Audio } from "expo-av";
 import AppContext from "./AppContext";
 
 const HelpBar = (props) => {
+  Text.defaultProps = Text.defaultProps || {};
+  Text.defaultProps.allowFontScaling = false;
+
   const [visible, setVisible] = useState(false);
   const [sound, setSound] = React.useState();
   const [soundOn, setSoundOn] = React.useState(false);
@@ -92,7 +95,9 @@ const HelpBar = (props) => {
 
             <ScrollView
               _contentContainerStyle={{
+                flexGrow: 1,
                 justifyContent: "center",
+                flexDirection: "column",
               }}
             >
               <Text style={styles.textSecondary}>

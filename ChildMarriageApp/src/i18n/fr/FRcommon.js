@@ -54,7 +54,7 @@ export default {
     slide4:
       "Le bouton rouge en haut de la page vous permet de passer un appel d’urgence, vous pouvez rentrer le numéro d’urgence à appeler dans les paramètres.",
     slide5:
-      "\n\nVous pouvez accéder à la page des paramètres depuis le bas de la page d'accueil." +
+      "Vous pouvez accéder à la page des paramètres depuis le bas de la page d'accueil." +
       "\nDans les paramètres vous pouvez changer la langue de l’application.",
 
     slide6:
@@ -71,7 +71,7 @@ export default {
     close: "Fermer",
     home: 'Si vous voulez appeler une ligne d\'urgence, cliquez sur le bouton rouge.\nVous pouvez entrer le numéro d’urgence dans les paramètres.\n\nVous avez 4 boutons sur cette page : si vous voulez apprendre quelque chose, cliquez sur "S’informer", si vous voulez lire ou écouter un témoignage, cliquez sur "Témoignages", si vous voulez savoir où aller pour obtenir de l\'aide, cliquez sur "Demander de l\'aide", si vous voulez tester ce que vous avez appris avec un quiz, cliquez sur "Jouer".\n\nSi vous voulez signaler un cas de mariage d’enfant, vous pouvez cliquer sur "signaler un mariage". Si vous voulez avoir des réponses à vos questions, cliquez sur "Poser une question".\n\nSi vous voulez quitter, cliquez sur "Quitter".',
     settings:
-      "Vous pouvez changer ici les paramètres de l’application. Cliquez sur le rond pour changer la langue et rentrer le numéro d’urgence si vous voulez le changer. Le numéro doit comporter 9 chiffres. \n\n Cliquez sur 'Sauver' pour sauver les nouveaux paramètres.",
+      "Ici, vous pouvez modifier les paramètres de l'application. \n\nAppuyez sur le petit cercle pour changer de langue. \nInsérez un nouveau numéro d'urgence si vous souhaitez le modifier.\nLe numéro doit être composé de 9 chiffres sans espaces. Le code pays n'est pas nécessaire.",
     learn:
       "Ici vous pouvez vous renseigner sur différents sujets, cliquez sur le bouton correspondant au sujet sur lequel vous voulez vous renseigner.",
     questions: "",

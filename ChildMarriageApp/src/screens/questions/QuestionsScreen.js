@@ -16,6 +16,10 @@ import {
 import HelpBar from "../../components/helpBar";
 import { Entypo } from "@expo/vector-icons";
 import I18n from "../../i18n";
+import {
+  responsiveScreenFontSize,
+  responsiveWidth,
+} from "react-native-responsive-dimensions";
 
 const QuestionsScreen = ({ navigation }) => {
   const ContentButton = (buttonText, navigationDest, iconName, iconlib) => {
@@ -36,7 +40,12 @@ const QuestionsScreen = ({ navigation }) => {
             alignSelf="center"
             style={{ textAlign: "center" }}
           />
-          <Text style={styles.Txt248}>
+          <Text
+            paddingTop={3}
+            numberOfLines={2}
+            adjustsFontSizeToFit
+            style={styles.Txt248}
+          >
             {I18n.t("common/home." + buttonText)}
           </Text>
         </TouchableOpacity>
@@ -58,12 +67,12 @@ const QuestionsScreen = ({ navigation }) => {
           >
             <Box>
               <Center>
-                <Text paddingX={3} fontSize={25}>
+                <Text paddingX={3} fontSize={22}>
                   {I18n.t("common/questions.NA")}
                 </Text>
               </Center>
             </Box>
-            <Center paddingTop={10}>
+            <Center paddingTop={5}>
               {ContentButton("gethelp", "Contact", "address", Entypo)}
             </Center>
           </ScrollView>
@@ -119,8 +128,8 @@ const styles = StyleSheet.create({
     shadowColor: "rgba(0,0,0,0.25)",
     elevation: 0,
     shadowOffset: { width: 0, height: 4 },
-    width: 149,
-    height: 160,
+    width: responsiveWidth(45),
+    height: responsiveWidth(50),
   },
   Txt248: {
     fontSize: 22,

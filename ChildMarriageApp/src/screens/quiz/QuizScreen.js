@@ -82,14 +82,16 @@ const QuizScreen = ({ route, navigation }) => {
           </Heading>
           <ScrollView
             _contentContainerStyle={{
+              flexGrow: 1,
               justifyContent: "center",
+              flexDirection: "column",
             }}
           >
             <VStack space={2} paddingTop="20px">
               {QuestionBox()}
             </VStack>
           </ScrollView>
-          <HStack space={10} justifyContent="center" paddingBottom={5}>
+          <HStack space={10} justifyContent="center">
             <TouchableOpacity
               style={styles.true}
               onPress={() => answerQuestion(true)}
@@ -103,7 +105,7 @@ const QuizScreen = ({ route, navigation }) => {
               <Entypo name="cross" size={75} color="white" />
             </TouchableOpacity>
           </HStack>
-          <Text alignSelf="center" fontSize={25} paddingBottom={5}>
+          <Text alignSelf="center" fontSize={25} paddingBottom={2}>
             {I18n.t("quiz/currpoints") + ": " + points}
           </Text>
           <HStack

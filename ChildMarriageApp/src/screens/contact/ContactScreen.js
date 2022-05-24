@@ -75,18 +75,6 @@ const ContactScreen = ({ navigation }) => {
                 "N° 19 Av PELICAN, Q.des volcans, C/Goma",
                 "aidprofen"
               )}
-              {ContactBox(
-                "AidProfen",
-                "(+243) 811-441-591",
-                "N° 19 Av PELICAN, Q.des volcans, C/Goma",
-                "aidprofen"
-              )}
-              {ContactBox(
-                "AidProfen",
-                "(+243) 811-441-591",
-                "N° 19 Av PELICAN, Q.des volcans, C/Goma",
-                "aidprofen"
-              )}
             </VStack>
           </ScrollView>
           <HStack

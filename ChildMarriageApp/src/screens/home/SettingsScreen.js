@@ -18,6 +18,9 @@ import I18n from "../../i18n";
 import AppContext from "../../components/AppContext";
 
 const SettingsScreen = ({ navigation }) => {
+  Input.defaultProps = Input.defaultProps || {};
+  Input.defaultProps.allowFontScaling = false;
+
   const myContext = useContext(AppContext);
   I18n.locale = myContext.language;
   const [localLang, setLocalLang] = React.useState(myContext.language);

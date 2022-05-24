@@ -4,6 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 import I18n from "../i18n";
 import call from "react-native-phone-call";
 import AppContext from "./AppContext";
+import { responsiveHeight } from "react-native-responsive-dimensions";
 
 const EmergencyCall = () => {
   const text = I18n.t("common/common.emergencycall");
@@ -26,7 +27,9 @@ const EmergencyCall = () => {
   return (
     <TouchableOpacity style={styles.button} onPress={triggerCall}>
       <Ionicons name="call" size={70} color="white" />
-      <Text style={styles.text}>{text}</Text>
+      <Text numberOfLines={2} adjustsFontSizeToFit style={styles.text}>
+        {text}
+      </Text>
     </TouchableOpacity>
   );
 };
@@ -39,7 +42,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
     padding: "1%",
-    alignContent: "center",
+    alignItems: "center",
+    height: responsiveHeight(15),
   },
   text: {
     fontWeight: "bold",
