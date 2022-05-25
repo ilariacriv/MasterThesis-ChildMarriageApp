@@ -88,7 +88,7 @@ const HomeScreen = ({ navigation }) => {
             </HStack>
             <HStack space={3} style={styles.hstack}>
               {ContentButton(
-                "report",
+                "reportn",
                 "Report",
                 "report-problem",
                 MaterialIcons
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     height: responsiveWidth(50),
   },
   Txt248: {
-    fontSize: responsiveScreenFontSize(3),
+    fontSize: responsiveScreenFontSize(2.7),
     fontWeight: "700",
     letterSpacing: -0.4,
     color: "rgba(20,206,218,1)",

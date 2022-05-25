@@ -17,6 +17,7 @@ export default {
     stories: "Témoignages",
     gethelp: "Demander de l’aide",
     report: "Signaler un cas",
+    reportn: "Signaler \nun cas",
     play: "Jouer",
     ask: "Poser des questions",
   },

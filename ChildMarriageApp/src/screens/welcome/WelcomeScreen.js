@@ -161,7 +161,7 @@ const WelcomeScreen = ({ navigation }) => {
         flex={1}
       >
         <EmergencyCall />
-        <Heading size="2xl" alignSelf="center" flex={0.7}>
+        <Heading size="xl" alignSelf="center" flex={0.7}>
           {I18n.t("common/welcomepage.welcome")}!
         </Heading>
 

@@ -87,9 +87,7 @@ const QuizScreen = ({ route, navigation }) => {
               flexDirection: "column",
             }}
           >
-            <VStack space={2} paddingTop="20px">
-              {QuestionBox()}
-            </VStack>
+            <VStack space={2}>{QuestionBox()}</VStack>
           </ScrollView>
           <HStack space={10} justifyContent="center">
             <TouchableOpacity
